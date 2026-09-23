@@ -97,6 +97,7 @@ if (!reducedMotion) {
   animateOnScroll();
 }
 
+
 // Slow layered background parallax: decorations move slower than page content.
 if (!reducedMotion) {
   let bgTicking = false;
