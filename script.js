@@ -22,7 +22,7 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImage = lightbox?.querySelector('img');
 const closeBtn = lightbox?.querySelector('.lightbox-close');
 
-document.querySelectorAll('.image-card[data-image], .featured-card[data-image], .stacked-photo[data-image]').forEach(card => {
+document.querySelectorAll('.image-card[data-image], .featured-card[data-image], .stacked-photo[data-image], .hero-mini-photo[data-image], .fresh-drop-photo[data-image]').forEach(card => {
   card.addEventListener('click', () => {
     if (!lightbox || !lightboxImage) return;
     const img = card.querySelector('img');

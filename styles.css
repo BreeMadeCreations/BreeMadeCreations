@@ -445,15 +445,6 @@ footer strong { color:var(--text); }
   background:#fff; font-size:2rem; line-height:1; color: var(--rose); box-shadow: var(--shadow);
 }
 
-/* cute scrollbar */
-::-webkit-scrollbar { width: 12px; }
-::-webkit-scrollbar-track { background: #fff3f8; }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ffc0d9, #ff94ba);
-  border-radius: 999px;
-  border: 2px solid #fff3f8;
-}
-
 @media (max-width: 900px) {
   .menu-btn { display:block; }
   .nav {
@@ -1156,14 +1147,9 @@ body::before {
   background: linear-gradient(135deg, #f4a3b4, #e77e9c);
 }
 
-::-webkit-scrollbar-track {
-  background: #f7bac9;
-}
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #f4a3b4, #e77e9c);
-  border-color: #f7bac9;
-}
+
+
 
 
 /* 10X boutique polish */
@@ -1879,5 +1865,206 @@ footer::before {
     height: 125px;
     right: 2px;
     bottom: 22px;
+  }
+}
+
+
+/* Live visual fix v12 */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  scrollbar-color: auto;
+  scrollbar-width: auto;
+}
+
+main,
+.hero,
+.section,
+.banner-section,
+.background-doodles,
+.love-marquee {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Hero collage: fill the empty top-right card without covering the logo */
+.hero-visual-collage {
+  min-height: 610px;
+  isolation: isolate;
+}
+
+.hero-visual-collage .hero-logo-card {
+  width: min(60%, 355px);
+  z-index: 5;
+  box-shadow: 0 28px 75px rgba(106,35,62,.18);
+}
+
+.hero-mini-photo {
+  z-index: 2;
+  border: 6px solid rgba(255,255,255,.96);
+}
+
+.hero-photo-one {
+  width: 185px;
+  height: 235px;
+  right: -8px;
+  top: 16px;
+  transform: rotate(4deg);
+}
+
+.hero-photo-two {
+  width: 158px;
+  height: 205px;
+  left: 0;
+  bottom: 32px;
+  transform: rotate(-5deg);
+}
+
+.hero-photo-three {
+  width: 138px;
+  height: 170px;
+  right: 12px;
+  bottom: 26px;
+  transform: rotate(4deg);
+}
+
+.hero-mini-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-photo-one img {
+  object-position: center 48%;
+}
+
+/* Featured apparel: make the real new photo the visual focus */
+.fresh-drop-card {
+  grid-template-columns: .78fr 1.22fr;
+  padding: clamp(24px, 4vw, 44px);
+}
+
+.fresh-drop-photo {
+  min-height: 560px;
+  border: 6px solid rgba(255,255,255,.92);
+  background: #fff;
+}
+
+.fresh-drop-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Gallery: first slot uses the new upload and stays visibly filled */
+.editorial-gallery .gallery-xl,
+.featured-gallery .gallery-xl {
+  min-height: 520px;
+}
+
+.editorial-gallery .gallery-xl img,
+.featured-gallery .gallery-xl img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Slightly richer boutique finish */
+.quick-links-wrap,
+.fresh-drop-card,
+.support-card,
+.contact-card {
+  box-shadow:
+    0 24px 65px rgba(122,43,69,.12),
+    inset 0 1px 0 rgba(255,255,255,.78);
+}
+
+.product-card,
+.featured-card,
+.image-card {
+  border-color: rgba(226,121,157,.26);
+}
+
+.section-heading h2 {
+  text-wrap: balance;
+}
+
+@media (max-width: 980px) {
+  .hero-visual-collage {
+    min-height: 560px;
+  }
+
+  .hero-visual-collage .hero-logo-card {
+    width: min(58%, 335px);
+  }
+
+  .hero-photo-one {
+    width: 155px;
+    height: 205px;
+    right: 0;
+  }
+
+  .fresh-drop-card {
+    grid-template-columns: 1fr;
+  }
+
+  .fresh-drop-photo,
+  .fresh-drop-photo img {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-visual-collage {
+    min-height: 500px;
+  }
+
+  .hero-visual-collage .hero-logo-card {
+    width: 62%;
+  }
+
+  .hero-photo-one {
+    width: 120px;
+    height: 160px;
+    top: 16px;
+    right: 0;
+  }
+
+  .hero-photo-two {
+    width: 108px;
+    height: 145px;
+    left: 0;
+    bottom: 18px;
+  }
+
+  .hero-photo-three {
+    width: 98px;
+    height: 128px;
+    right: 0;
+    bottom: 20px;
+  }
+
+  .fresh-drop-photo,
+  .fresh-drop-photo img {
+    min-height: 380px;
+  }
+
+  .editorial-gallery .gallery-xl,
+  .featured-gallery .gallery-xl,
+  .editorial-gallery .gallery-xl img,
+  .featured-gallery .gallery-xl img {
+    min-height: 340px;
   }
 }
