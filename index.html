@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=10" />
 </head>
 <body>
   <div class="background-doodles" aria-hidden="true">
@@ -33,6 +33,12 @@
       </nav>
     </div>
   </header>
+  <div class="love-marquee" aria-hidden="true">
+    <div class="love-marquee-track">
+      <span>♡ CUSTOM MADE</span><span>✦ APPAREL</span><span>♡ STICKERS</span><span>✦ DECALS</span><span>♡ BOUQUETS</span><span>✦ PERSONALIZED GIFTS</span><span>♡ PICKUP • DELIVERY • SHIPPING</span>
+      <span>♡ CUSTOM MADE</span><span>✦ APPAREL</span><span>♡ STICKERS</span><span>✦ DECALS</span><span>♡ BOUQUETS</span><span>✦ PERSONALIZED GIFTS</span><span>♡ PICKUP • DELIVERY • SHIPPING</span>
+    </div>
+  </div>
 
   <main>
     <section id="home" class="hero">
@@ -51,8 +57,23 @@
           <span>♡ Shipping available</span>
         </div>
       </div>
-      <div class="floating-sparkle sparkle-1">✦</div><div class="floating-sparkle sparkle-2">♡</div><div class="floating-sparkle sparkle-3">✦</div><div class="hero-logo-card">
-        <img src="assets/round-logo.webp?v=2" alt="Bree Made Creations logo with pink roses, bow, butterfly and product icons">
+      <div class="floating-sparkle sparkle-1">✦</div><div class="floating-sparkle sparkle-2">♡</div><div class="floating-sparkle sparkle-3">✦</div>
+      <div class="hero-visual-collage">
+        <div class="hero-logo-card">
+          <img src="assets/round-logo.webp?v=2" alt="Bree Made Creations logo with pink roses, bow, butterfly and product icons">
+        </div>
+        <button class="hero-mini-photo hero-photo-one" data-image="assets/gallery/custom-shirts-featured.webp" aria-label="View custom shirts">
+          <img src="assets/gallery/custom-shirts-featured.webp?v=2" alt="Custom shirts by Bree Made Creations">
+          <span>Custom Apparel</span>
+        </button>
+        <button class="hero-mini-photo hero-photo-two" data-image="assets/gallery/bouquet-pink-fresh.webp" aria-label="View custom bouquet">
+          <img src="assets/gallery/bouquet-pink-fresh.webp?v=2" alt="Pink custom bouquet">
+          <span>Bouquets</span>
+        </button>
+        <button class="hero-mini-photo hero-photo-three" data-image="assets/gallery/stickers-2toneclassics.webp" aria-label="View custom stickers">
+          <img src="assets/gallery/stickers-2toneclassics.webp?v=2" alt="Custom stickers">
+          <span>Stickers</span>
+        </button>
       </div>
     
     <div class="quick-links-wrap reveal-up">
@@ -78,6 +99,13 @@
         </a>
       </div>
     </div>
+      <div class="category-ribbon reveal-up">
+        <span>👕 Apparel</span>
+        <span>✨ Stickers</span>
+        <span>🚗 Decals</span>
+        <span>💐 Bouquets</span>
+        <span>🎁 Gifts</span>
+      </div>
 </section>
 
     <section class="banner-section reveal-scale" aria-label="Bree Made Creations brand banner">
@@ -131,60 +159,59 @@
         <p>Tap any photo to see it bigger.</p>
       </div>
 
-      <div class="featured-gallery">
-
-        <button class="featured-card fresh-gallery-card reveal-up" data-image="assets/gallery/custom-shirts-featured.webp">
-          <img src="assets/gallery/custom-shirts-featured.webp?v=1" alt="Custom Tyler soccer shirt and Jesus is my light shirt">
+      <div class="featured-gallery editorial-gallery">
+        <button class="featured-card gallery-xl reveal-up" data-image="assets/gallery/custom-shirts-featured.webp">
+          <img src="assets/gallery/custom-shirts-featured.webp?v=2" alt="Custom Tyler soccer shirt and Jesus is my light shirt">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Apparel</span></div>
         </button>
 
-        <button class="featured-card wide reveal-up" data-image="assets/gallery/shirts-grace-growth.webp">
-          <img src="assets/gallery/shirts-grace-growth.webp" alt="Custom apparel">
+        <button class="featured-card gallery-wide reveal-up" data-image="assets/gallery/shirts-grace-growth.webp">
+          <img src="assets/gallery/shirts-grace-growth.webp?v=2" alt="Custom Grace and Growth apparel">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Apparel</span></div>
         </button>
 
-        <div class="featured-card tall saber-stack reveal-up">
-          <button class="stacked-photo" data-image="assets/gallery/lightsaber-day.webp">
-            <img src="assets/gallery/lightsaber-day.webp" alt="Lightsaber bouquet in daylight">
-          </button>
-          <button class="stacked-photo" data-image="assets/gallery/lightsaber-dark.webp">
-            <img src="assets/gallery/lightsaber-dark.webp" alt="Lightsaber bouquet glowing in the dark">
-          </button>
+        <button class="featured-card gallery-tall reveal-up" data-image="assets/gallery/lightsaber-day.webp">
+          <img src="assets/gallery/lightsaber-day.webp?v=2" alt="Lightsaber bouquet in daylight">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
-        </div>
+        </button>
 
-        <button class="featured-card reveal-up" data-image="assets/gallery/hats-tan-lines.webp">
-          <img src="assets/gallery/hats-tan-lines.webp" alt="Custom hats">
+        <button class="featured-card gallery-tall reveal-up" data-image="assets/gallery/lightsaber-dark.webp">
+          <img src="assets/gallery/lightsaber-dark.webp?v=2" alt="Lightsaber bouquet glowing in the dark">
+          <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
+        </button>
+
+        <button class="featured-card gallery-square reveal-up" data-image="assets/gallery/hats-tan-lines.webp">
+          <img src="assets/gallery/hats-tan-lines.webp?v=2" alt="Custom Good Times and Tan Lines hats">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Hat</span></div>
         </button>
 
-        <button class="featured-card reveal-up" data-image="assets/gallery/stickers-2toneclassics.webp">
-          <img src="assets/gallery/stickers-2toneclassics.webp" alt="Custom stickers">
+        <button class="featured-card gallery-square reveal-up" data-image="assets/gallery/stickers-2toneclassics.webp">
+          <img src="assets/gallery/stickers-2toneclassics.webp?v=2" alt="Custom 2toneclassics stickers">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Sticker</span></div>
         </button>
 
-        <button class="featured-card reveal-up" data-image="assets/gallery/decal-eagle-flag.webp">
-          <img src="assets/gallery/decal-eagle-flag.webp" alt="Custom decal">
+        <button class="featured-card gallery-wide reveal-up" data-image="assets/gallery/decal-eagle-flag.webp">
+          <img src="assets/gallery/decal-eagle-flag.webp?v=2" alt="Custom eagle flag decal">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Decal</span></div>
         </button>
 
-        <button class="featured-card reveal-up" data-image="assets/gallery/bouquet-tulips.webp">
-          <img src="assets/gallery/bouquet-tulips.webp" alt="Custom bouquet">
+        <button class="featured-card gallery-tall reveal-up" data-image="assets/gallery/bouquet-tulips.webp">
+          <img src="assets/gallery/bouquet-tulips.webp?v=2" alt="Custom tulip bouquet">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
         </button>
 
-        <button class="featured-card reveal-up" data-image="assets/gallery/bouquet-red-black.webp">
-          <img src="assets/gallery/bouquet-red-black.webp" alt="Custom bouquet">
+        <button class="featured-card gallery-tall reveal-up" data-image="assets/gallery/bouquet-red-black.webp">
+          <img src="assets/gallery/bouquet-red-black.webp?v=2" alt="Custom red and black bouquet">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
         </button>
 
-        <button class="featured-card reveal-up" data-image="assets/gallery/bouquet-pink-fresh.webp">
-          <img src="assets/gallery/bouquet-pink-fresh.webp" alt="Custom bouquet">
+        <button class="featured-card gallery-square reveal-up" data-image="assets/gallery/bouquet-pink-fresh.webp">
+          <img src="assets/gallery/bouquet-pink-fresh.webp?v=2" alt="Custom pink bouquet">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
         </button>
 
-        <button class="featured-card reveal-up" data-image="assets/gallery/stickers-diablo.webp">
-          <img src="assets/gallery/stickers-diablo.webp" alt="Custom stickers">
+        <button class="featured-card gallery-square reveal-up" data-image="assets/gallery/stickers-diablo.webp">
+          <img src="assets/gallery/stickers-diablo.webp?v=2" alt="Custom Diablo stickers">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Sticker</span></div>
         </button>
       </div>
@@ -291,6 +318,7 @@
         <div class="contact-buttons">
           <a class="btn primary" href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">@breemadecreations</a>
           <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61591828299475" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn ghost" href="https://linktr.ee/BreeMadeCreations" target="_blank" rel="noopener">Linktree</a>
           <a class="btn ghost" href="tel:+14807148024">(480) 714-8024</a>
         </div>
 
