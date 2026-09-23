@@ -1086,3 +1086,81 @@ body::after {
     transform: none !important;
   }
 }
+
+
+/* Bree Made Creations exact bow-pink palette */
+:root {
+  --bg: #f8c2cf;
+  --bg-2: #f4a3b4;
+  --card: rgba(255,255,255,.92);
+  --solid-card: #ffffff;
+  --pink: #f8c2cf;
+  --pink-2: #f4a3b4;
+  --pink-3: #ec88a3;
+  --pink-dark: #d85d7e;
+  --rose: #b44164;
+  --rose-deep: #7a2b45;
+  --text: #302127;
+  --muted: #78636b;
+  --line: #edb2c2;
+  --gradient: linear-gradient(135deg, #f7bac9 0%, #fbe0e7 48%, #f2a0b3 100%);
+  --gradient-strong: linear-gradient(135deg, #f4a3b4 0%, #e77e9c 100%);
+}
+
+html { color-scheme: light; }
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.35), transparent 24rem),
+    radial-gradient(circle at 82% 14%, rgba(255,220,229,.30), transparent 22rem),
+    linear-gradient(180deg, #fbd1da 0%, #f6b5c5 100%);
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255,255,255,.55), transparent 11rem),
+    radial-gradient(circle at 76% 8%, rgba(255,255,255,.35), transparent 13rem),
+    radial-gradient(circle at 85% 55%, rgba(255,255,255,.18), transparent 12rem),
+    radial-gradient(circle at 8% 76%, rgba(255,227,234,.30), transparent 10rem);
+}
+
+.site-header {
+  background: rgba(255,239,244,.95);
+}
+
+.hero-logo-card {
+  background: linear-gradient(135deg, rgba(255,255,255,.97), rgba(248,194,207,.62));
+}
+
+.alt {
+  background: linear-gradient(180deg, rgba(255,250,252,.82), rgba(249,204,216,.82));
+}
+
+.product-card,
+.image-card,
+.featured-card,
+.quick-link-card,
+.mini-action {
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,245,248,.98));
+}
+
+.quick-links-wrap,
+.support-card,
+.contact-card {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(244,163,180,.30), transparent 13rem),
+    linear-gradient(135deg, #fff 0%, #fde4ea 100%);
+}
+
+.primary {
+  background: linear-gradient(135deg, #f4a3b4, #e77e9c);
+}
+
+::-webkit-scrollbar-track {
+  background: #f7bac9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f4a3b4, #e77e9c);
+  border-color: #f7bac9;
+}
