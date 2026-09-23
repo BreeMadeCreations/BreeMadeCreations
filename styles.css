@@ -1089,42 +1089,55 @@ body::after {
 
 
 
-/* Bree Made Creations bow-pink palette */
+
+/* Bree Made Creations balanced light-pink palette */
 :root {
-  --bg: #fff8fa;
-  --bg-2: #fff1f5;
+  --bg: #fff5f8;
+  --bg-2: #ffeef3;
   --card: rgba(255,255,255,.88);
   --solid-card: #ffffff;
-  --pink: #f8b0c0;
-  --pink-2: #f39ab0;
-  --pink-3: #eb7899;
-  --pink-dark: #d84f77;
-  --rose: #ad315b;
-  --rose-deep: #76203f;
-  --text: #302126;
+  --pink: #f7c2cf;
+  --pink-2: #f3a9bb;
+  --pink-3: #ea86a2;
+  --pink-dark: #d95d80;
+  --rose: #ae3f61;
+  --rose-deep: #762840;
+  --text: #302127;
   --muted: #78636b;
-  --line: #f2c4d0;
-  --gradient: linear-gradient(135deg, #fbd1dc 0%, #fff9fb 52%, #f8becd 100%);
-  --gradient-strong: linear-gradient(135deg, #f39ab0 0%, #e96f91 100%);
+  --line: #f1ccd6;
+  --gradient: linear-gradient(135deg, #fbd6df 0%, #fff8fa 50%, #f7c6d2 100%);
+  --gradient-strong: linear-gradient(135deg, #f0a4b7 0%, #e77b99 100%);
+}
+
+html {
+  color-scheme: light;
 }
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(248,176,192,.30), transparent 24rem),
-    radial-gradient(circle at 82% 14%, rgba(243,154,176,.20), transparent 22rem),
-    linear-gradient(180deg, #fffafb 0%, #fff4f7 100%);
+    radial-gradient(circle at top left, rgba(247,194,207,.22), transparent 24rem),
+    radial-gradient(circle at 82% 14%, rgba(243,169,187,.17), transparent 22rem),
+    linear-gradient(180deg, #fff8fa 0%, #fff0f4 100%);
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255,255,255,.84), transparent 11rem),
+    radial-gradient(circle at 76% 8%, rgba(255,255,255,.62), transparent 13rem),
+    radial-gradient(circle at 85% 55%, rgba(247,194,207,.22), transparent 12rem),
+    radial-gradient(circle at 8% 76%, rgba(255,240,246,.55), transparent 10rem);
 }
 
 .site-header {
-  background: rgba(255,250,252,.94);
+  background: rgba(255,248,250,.95);
 }
 
 .hero-logo-card {
-  background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(251,209,220,.50));
+  background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(251,214,223,.42));
 }
 
 .alt {
-  background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,239,244,.78));
+  background: linear-gradient(180deg, rgba(255,255,255,.74), rgba(255,238,243,.82));
 }
 
 .product-card,
@@ -1132,20 +1145,26 @@ body {
 .featured-card,
 .quick-link-card,
 .mini-action {
-  background: linear-gradient(180deg, rgba(255,255,255,.97), rgba(255,246,249,.96));
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,247,249,.97));
 }
 
-.contact-card,
-.support-card {
+.quick-links-wrap,
+.support-card,
+.contact-card {
   background:
-    radial-gradient(circle at 85% 15%, rgba(248,176,192,.30), transparent 13rem),
-    linear-gradient(135deg, #fff 0%, #fff4f7 100%);
+    radial-gradient(circle at 85% 15%, rgba(247,194,207,.22), transparent 13rem),
+    linear-gradient(135deg, #fff 0%, #fff3f6 100%);
 }
 
 .primary {
-  background: linear-gradient(135deg, #f39ab0, #e96f91);
+  background: linear-gradient(135deg, #f0a4b7, #e77b99);
+}
+
+::-webkit-scrollbar-track {
+  background: #fff0f4;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #f39ab0, #e96f91);
+  background: linear-gradient(180deg, #f3a9bb, #e77b99);
+  border-color: #fff0f4;
 }
