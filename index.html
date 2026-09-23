@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
   <div class="background-doodles" aria-hidden="true">
@@ -62,8 +62,8 @@
         <div class="hero-logo-card">
           <img src="assets/round-logo.webp?v=2" alt="Bree Made Creations logo with pink roses, bow, butterfly and product icons">
         </div>
-        <button class="hero-mini-photo hero-photo-one" data-image="assets/gallery/new-fall-shirts.webp" aria-label="View custom shirts">
-          <img src="assets/gallery/new-fall-shirts.webp?v=1" alt="Custom shirts by Bree Made Creations">
+        <button class="hero-mini-photo hero-photo-one" data-image="embedded-new-shirt" aria-label="View custom shirts">
+          <img data-new-shirt alt="Custom shirts by Bree Made Creations">
           <span>Custom Apparel</span>
         </button>
         <button class="hero-mini-photo hero-photo-two" data-image="assets/gallery/bouquet-pink-fresh.webp" aria-label="View custom bouquet">
@@ -73,6 +73,10 @@
         <button class="hero-mini-photo hero-photo-three" data-image="assets/gallery/stickers-2toneclassics.webp" aria-label="View custom stickers">
           <img src="assets/gallery/stickers-2toneclassics.webp?v=2" alt="Custom stickers">
           <span>Stickers</span>
+        </button>
+        <button class="hero-mini-photo hero-photo-four" data-image="assets/gallery/hats-tan-lines.webp" aria-label="View custom hats">
+          <img src="assets/gallery/hats-tan-lines.webp?v=2" alt="Custom hats by Bree Made Creations">
+          <span>Hats</span>
         </button>
       </div>
     
@@ -116,7 +120,7 @@
     <section class="section fresh-drop scroll-section" aria-label="Featured recent custom shirts">
       <div class="fresh-drop-card reveal-up">
         <div class="fresh-drop-copy">
-          <span class="eyebrow">FRESH OFF THE PRESS ✦</span>
+          <span class="eyebrow">FRESH OFF THE PRESS ✦</span><span class="fresh-script">made just for you ♡</span>
           <h2><span class="title-kicker">new custom apparel</span>Made to match your vibe.</h2>
           <p>From names and team themes to faith-based designs and seasonal drops, Bree can turn your idea into something you’ll actually want to wear.</p>
           <div class="fresh-badges">
@@ -126,8 +130,8 @@
           </div>
           <a class="btn primary" href="#contact">Create Yours</a>
         </div>
-        <button class="fresh-drop-photo reveal-scale" data-image="assets/gallery/new-fall-shirts.webp" aria-label="Open custom shirts photo">
-          <img src="assets/gallery/new-fall-shirts.webp?v=1" alt="Two custom Bree Made Creations shirts featuring Tyler soccer lettering and a Jesus is my light design">
+        <button class="fresh-drop-photo reveal-scale" data-image="embedded-new-shirt" aria-label="Open custom shirts photo">
+          <img data-new-shirt alt="Two custom Bree Made Creations shirts featuring Tyler soccer lettering and a Jesus is my light design">
           <span class="photo-sticker sticker-top">NEW ✦</span>
           <span class="photo-sticker sticker-bottom">CUSTOM APPAREL ♡</span>
         </button>
@@ -160,8 +164,8 @@
       </div>
 
       <div class="featured-gallery editorial-gallery">
-        <button class="featured-card gallery-xl reveal-up" data-image="assets/gallery/new-fall-shirts.webp">
-          <img src="assets/gallery/new-fall-shirts.webp?v=1" alt="Custom Tyler soccer shirt and Jesus is my light shirt">
+        <button class="featured-card gallery-xl reveal-up" data-image="embedded-new-shirt">
+          <img data-new-shirt alt="Custom Tyler soccer shirt and Jesus is my light shirt">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Apparel</span></div>
         </button>
 
@@ -347,6 +351,6 @@
     <img src="" alt="">
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
