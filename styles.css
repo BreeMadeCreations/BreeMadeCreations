@@ -2068,3 +2068,115 @@ main,
     min-height: 340px;
   }
 }
+
+
+/* visible boutique polish v13 */
+.fresh-script {
+  display: block;
+  margin: -4px 0 14px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: var(--pink-dark);
+  font-size: 1rem;
+  opacity: .8;
+}
+
+.hero-photo-four {
+  width: 132px;
+  height: 150px;
+  left: 28px;
+  top: 26px;
+  transform: rotate(-4deg);
+}
+
+.hero-visual-collage::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,.86), rgba(255,255,255,.2) 55%, transparent 70%);
+  z-index: 0;
+}
+
+.hero-visual-collage .hero-logo-card,
+.hero-mini-photo {
+  position: relative;
+}
+
+.hero-mini-photo {
+  position: absolute;
+}
+
+.fresh-drop-card {
+  position: relative;
+  overflow: visible;
+}
+
+.fresh-drop-card::after {
+  content: "♡";
+  position: absolute;
+  right: -18px;
+  top: -28px;
+  font-size: 70px;
+  color: rgba(180,65,100,.10);
+  transform: rotate(12deg);
+  pointer-events: none;
+}
+
+.fresh-drop-photo::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 28px;
+  left: 50%;
+  top: -14px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(255,212,225,.88);
+  border: 1px solid rgba(226,121,157,.28);
+  box-shadow: 0 6px 16px rgba(122,43,69,.08);
+  z-index: 3;
+}
+
+.editorial-gallery .featured-card:first-child {
+  box-shadow: 0 26px 65px rgba(122,43,69,.18);
+}
+
+.editorial-gallery .featured-card:first-child::after {
+  content: "NEW ♡";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.94);
+  color: var(--pink-dark);
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.product-card {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) rotate(.25deg);
+}
+
+@media (max-width: 640px) {
+  .hero-photo-four {
+    width: 92px;
+    height: 108px;
+    left: 0;
+    top: 18px;
+  }
+
+  .hero-visual-collage::before {
+    width: 300px;
+    height: 300px;
+  }
+}
