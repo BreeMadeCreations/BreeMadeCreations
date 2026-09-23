@@ -1789,3 +1789,95 @@ footer::before {
     grid-row: span 1;
   }
 }
+
+
+/* Hero collage spacing fix */
+.hero-visual-collage {
+  min-height: 640px;
+}
+.hero-visual-collage .hero-logo-card {
+  width: min(62%, 360px);
+  z-index: 5;
+}
+.hero-mini-photo {
+  z-index: 2;
+}
+.hero-photo-one {
+  width: 165px;
+  height: 210px;
+  right: 0;
+  top: 26px;
+  transform: rotate(4deg);
+}
+.hero-photo-two {
+  width: 155px;
+  height: 205px;
+  left: 0;
+  bottom: 28px;
+  transform: rotate(-5deg);
+}
+.hero-photo-three {
+  width: 135px;
+  height: 165px;
+  right: 10px;
+  bottom: 38px;
+  transform: rotate(3deg);
+}
+
+/* Make the featured new-shirt photo impossible to look empty */
+.fresh-drop-photo {
+  background: #fff;
+}
+.fresh-drop-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Ensure first gallery tile is visibly filled */
+.editorial-gallery .gallery-xl img {
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 980px) {
+  .hero-visual-collage {
+    min-height: 600px;
+  }
+  .hero-visual-collage .hero-logo-card {
+    width: min(58%, 340px);
+  }
+  .hero-photo-one { width: 150px; height: 195px; }
+  .hero-photo-two { width: 145px; height: 190px; }
+  .hero-photo-three { width: 125px; height: 155px; }
+}
+
+@media (max-width: 640px) {
+  .hero-visual-collage {
+    min-height: 560px;
+  }
+  .hero-visual-collage .hero-logo-card {
+    width: 60%;
+  }
+  .hero-photo-one {
+    width: 120px;
+    height: 155px;
+    right: 0;
+    top: 20px;
+  }
+  .hero-photo-two {
+    width: 112px;
+    height: 150px;
+    left: 0;
+    bottom: 18px;
+  }
+  .hero-photo-three {
+    width: 100px;
+    height: 125px;
+    right: 2px;
+    bottom: 22px;
+  }
+}
