@@ -1,41 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bree Made Creations | Custom Apparel, Stickers, Decals & More</title>
-  <meta name="description" content="Custom apparel, stickers, decals, personalized gifts and more from Bree Made Creations." />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bree Made Creations | Custom Creations Made With Love</title>
+  <meta name="description" content="Custom apparel, stickers, decals, bouquets, personalized gifts and more from Bree Made Creations.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=22">
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
-  <div class="background-doodles" aria-hidden="true">
-    <span class="d1">✦</span>
-    <span class="d2">♡</span>
-    <span class="d3">✧</span>
-    <span class="d4">♡</span>
-    <span class="d5">✦</span>
+  <div class="ambient" aria-hidden="true">
+    <i class="ambient-star a1">✦</i><i class="ambient-star a2">♡</i><i class="ambient-star a3">✧</i><i class="ambient-star a4">♡</i><i class="ambient-star a5">✦</i><i class="ambient-star a6">✧</i>
   </div>
+
   <header class="site-header">
     <div class="nav-wrap">
-      <a class="brand" href="#home"><img class="nav-logo" src="assets/nav-logo.webp?v=2" alt="Bree Made Creations logo"><span class="brand-text">Bree Made Creations</span></a>
+      <a class="brand" href="#home" aria-label="Bree Made Creations home">
+        <img src="assets/nav-logo.webp" alt="Bree Made Creations logo">
+        <span>Bree Made Creations</span>
+      </a>
       <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
       <nav class="nav">
-        <a href="#shop">What I Make</a>
+        <a href="#make">What I Make</a>
         <a href="#gallery">Gallery</a>
         <a href="#order">How to Order</a>
         <a href="#policies">Policies</a>
-        <a href="#payments">Payments</a>
         <a class="nav-cta" href="#contact">Order Now</a>
       </nav>
     </div>
   </header>
-  <div class="love-marquee" aria-hidden="true">
-    <div class="love-marquee-track">
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
       <span>♡ CUSTOM MADE</span><span>✦ APPAREL</span><span>♡ STICKERS</span><span>✦ DECALS</span><span>♡ BOUQUETS</span><span>✦ PERSONALIZED GIFTS</span><span>♡ PICKUP • DELIVERY • SHIPPING</span>
       <span>♡ CUSTOM MADE</span><span>✦ APPAREL</span><span>♡ STICKERS</span><span>✦ DECALS</span><span>♡ BOUQUETS</span><span>✦ PERSONALIZED GIFTS</span><span>♡ PICKUP • DELIVERY • SHIPPING</span>
     </div>
@@ -43,421 +43,200 @@
 
   <main>
     <section id="home" class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">CUSTOM CREATIONS MADE WITH LOVE 💕</span>
-        <h1>Your idea, made into something special. ♡</h1>
-        <p>Bouquets • Apparel • Stickers • Decals • Personalized Gifts & More. Pickup, delivery and shipping available.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">Order on Instagram</a>
-          <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61591828299475" target="_blank" rel="noopener">Message on Facebook</a>
-          <a class="btn soft" href="https://linktr.ee/BreeMadeCreations" target="_blank" rel="noopener">All Links</a>
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <span class="eyebrow">CUSTOM CREATIONS MADE WITH LOVE ♡</span>
+          <h1>Your idea,<br><em>made special.</em></h1>
+          <p>Bouquets • Apparel • Stickers • Decals • Personalized Gifts & More.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">Order on Instagram</a>
+            <a class="btn glass" href="#gallery">See the work</a>
+          </div>
+          <div class="hero-notes"><span>50% deposit</span><span>Pickup + delivery</span><span>Shipping available</span></div>
         </div>
-        <div class="mini-notes">
-          <span>♡ 50% deposit to begin</span>
-          <span>♡ Pickup & delivery available</span>
-          <span>♡ Shipping available</span>
+
+        <div class="hero-collage" aria-label="Bree Made Creations products">
+          <div class="hero-halo"></div>
+          <div class="hero-logo">
+            <img src="assets/round-logo.webp" alt="Bree Made Creations round logo">
+          </div>
+          <button class="hero-photo hp-shirt" data-image="assets/gallery/new-fall-shirts.webp" aria-label="Open custom apparel photo">
+            <img src="assets/gallery/new-fall-shirts.webp" alt="Custom shirts by Bree Made Creations">
+            <span>Apparel</span>
+          </button>
+          <button class="hero-photo hp-bouquet" data-image="assets/gallery/bouquet-pink-fresh.webp" aria-label="Open bouquet photo">
+            <img src="assets/gallery/bouquet-pink-fresh.webp" alt="Pink bouquet by Bree Made Creations">
+            <span>Bouquets</span>
+          </button>
+          <button class="hero-photo hp-sticker" data-image="assets/gallery/stickers-2toneclassics.webp" aria-label="Open stickers photo">
+            <img src="assets/gallery/stickers-2toneclassics.webp" alt="Custom stickers by Bree Made Creations">
+            <span>Stickers</span>
+          </button>
+          <button class="hero-photo hp-hat" data-image="assets/gallery/hats-tan-lines.webp" aria-label="Open hats photo">
+            <img src="assets/gallery/hats-tan-lines.webp" alt="Custom hats by Bree Made Creations">
+            <span>Hats</span>
+          </button>
+          <span class="hero-doodle hd1">✦</span><span class="hero-doodle hd2">♡</span><span class="hero-doodle hd3">✧</span>
         </div>
       </div>
-      <div class="floating-sparkle sparkle-1">✦</div><div class="floating-sparkle sparkle-2">♡</div><div class="floating-sparkle sparkle-3">✦</div>
-      <div class="hero-visual-collage">
-        <div class="hero-logo-card">
-          <img src="assets/round-logo.webp?v=2" alt="Bree Made Creations logo with pink roses, bow, butterfly and product icons">
+
+      <div class="quick-links">
+        <a href="#order"><small>01</small><strong>How to Order</strong><span>→</span></a>
+        <a href="#policies"><small>02</small><strong>Policies</strong><span>→</span></a>
+        <a href="#payments"><small>03</small><strong>Payments</strong><span>→</span></a>
+      </div>
+    </section>
+
+    <section class="brand-banner scroll-panel" aria-label="Bree Made Creations brand banner">
+      <span class="tape">made with love ♡</span>
+      <img src="assets/brand-banner.webp" alt="Bree Made Creations custom products banner">
+    </section>
+
+    <section class="story" id="story">
+      <div class="story-sticky">
+        <div class="story-copy">
+          <span class="eyebrow inverse">MADE AROUND YOU ✦</span>
+          <h2>Custom should<br><em>feel custom.</em></h2>
+          <p>Your colors, your theme, your idea — turned into something personal.</p>
+          <div class="story-count"><span>01</span><b>/ 04</b></div>
         </div>
-        <button class="hero-mini-photo hero-photo-one" data-image="tyler-hq" aria-label="View custom shirts">
-          <img data-tyler-hq loading="eager" alt="Custom shirts by Bree Made Creations">
-          <span>Custom Apparel</span>
-        </button>
-        <button class="hero-mini-photo hero-photo-two" data-image="assets/gallery/bouquet-pink-fresh.webp" aria-label="View custom bouquet">
-          <img src="assets/gallery/bouquet-pink-fresh.webp?v=2" alt="Pink custom bouquet">
-          <span>Bouquets</span>
-        </button>
-        <button class="hero-mini-photo hero-photo-three" data-image="assets/gallery/stickers-2toneclassics.webp" aria-label="View custom stickers">
-          <img src="assets/gallery/stickers-2toneclassics.webp?v=2" alt="Custom stickers">
-          <span>Stickers</span>
-        </button>
-        <button class="hero-mini-photo hero-photo-four" data-image="assets/gallery/hats-tan-lines.webp" aria-label="View custom hats">
-          <img src="assets/gallery/hats-tan-lines.webp?v=2" alt="Custom hats by Bree Made Creations">
-          <span>Hats</span>
-        </button>
+
+        <div class="story-stage" aria-hidden="true">
+          <figure class="story-card sc1"><img src="assets/gallery/new-fall-shirts.webp" alt=""><figcaption>APPAREL</figcaption></figure>
+          <figure class="story-card sc2"><img src="assets/gallery/bouquet-red-black.webp" alt=""><figcaption>BOUQUETS</figcaption></figure>
+          <figure class="story-card sc3"><img src="assets/gallery/stickers-diablo.webp" alt=""><figcaption>STICKERS</figcaption></figure>
+          <figure class="story-card sc4"><img src="assets/gallery/decal-eagle-flag.webp" alt=""><figcaption>DECALS</figcaption></figure>
+        </div>
+
+        <div class="story-word" aria-hidden="true">CREATE</div>
+        <div class="story-cue" aria-hidden="true">KEEP SCROLLING <span>↓</span></div>
       </div>
-    
-    <div class="quick-links-wrap reveal-up">
-      <div class="quick-links-title">
-        <span>Everything you need</span>
-        <strong>Quick Links ♡</strong>
-      </div>
-      <div class="quick-links-grid">
-        <a class="quick-link-card" href="#order">
-          <span class="quick-icon">01</span>
-          <div><strong>How to Order</strong><small>Start here</small></div>
-          <span class="quick-arrow">→</span>
-        </a>
-        <a class="quick-link-card" href="#policies">
-          <span class="quick-icon">02</span>
-          <div><strong>Policies</strong><small>Before ordering</small></div>
-          <span class="quick-arrow">→</span>
-        </a>
-        <a class="quick-link-card" href="#payments">
-          <span class="quick-icon">03</span>
-          <div><strong>Payment Methods</strong><small>Deposit + options</small></div>
-          <span class="quick-arrow">→</span>
-        </a>
-      </div>
+    </section>
+
+    <div class="kinetic" aria-hidden="true">
+      <div class="kinetic-a">CUSTOM MADE ♡ MADE FOR YOU ✦ CUSTOM MADE ♡ MADE FOR YOU ✦</div>
+      <div class="kinetic-b">APPAREL ✦ STICKERS ♡ DECALS ✦ BOUQUETS ♡ GIFTS ✦</div>
     </div>
-      <div class="category-ribbon reveal-up">
-        <span>👕 Apparel</span>
-        <span>✨ Stickers</span>
-        <span>🚗 Decals</span>
-        <span>💐 Bouquets</span>
-        <span>🎁 Gifts</span>
-      </div>
-</section>
 
-    <section class="banner-section reveal-scale" aria-label="Bree Made Creations brand banner">
-      <img src="assets/brand-banner.webp?v=2" alt="Bree Made Creations banner featuring bouquets, apparel, stickers and decals">
-    </section>
-
-
-
-    <section id="scroll-showcase" class="motion-story" aria-label="Scroll through Bree Made Creations">
-      <div class="motion-sticky">
-        <div class="motion-copy">
-          <span class="motion-kicker">BREE MADE CREATIONS ✦</span>
-          <h2 class="motion-title">Made to<br><em>feel like you.</em></h2>
-          <p class="motion-sub">Keep scrolling — the collection opens up as you move.</p><div class="motion-phase-label">CUSTOM APPAREL</div>
-          <div class="motion-step"><span>01</span><b>/ 04</b></div>
-        </div>
-
-        <div class="motion-stage" aria-hidden="true">
-          <div class="motion-card motion-card-1">
-            <img data-tyler-hq loading="eager" alt="">
-            <span>APPAREL</span>
-          </div>
-          <div class="motion-card motion-card-2">
-            <img src="assets/gallery/bouquet-pink-fresh.webp?v=2" alt="">
-            <span>BOUQUETS</span>
-          </div>
-          <div class="motion-card motion-card-3">
-            <img src="assets/gallery/stickers-2toneclassics.webp?v=2" alt="">
-            <span>STICKERS</span>
-          </div>
-          <div class="motion-card motion-card-4">
-            <img src="assets/gallery/hats-tan-lines.webp?v=2" alt="">
-            <span>HATS</span>
-          </div>
-        </div>
-
-        <div class="motion-giant-word">CREATE</div>
-        <div class="motion-scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
-      </div>
-    </section>
-
-    <section class="section fresh-drop scroll-section" aria-label="Featured recent custom shirts">
-      <div class="fresh-drop-card reveal-up">
-        <div class="fresh-drop-copy">
-          <span class="eyebrow">FRESH OFF THE PRESS ✦</span><span class="fresh-script">made just for you ♡</span>
-          <h2><span class="title-kicker">new custom apparel</span>Made to match your vibe.</h2>
-          <p>From names and team themes to faith-based designs and seasonal drops, Bree can turn your idea into something you’ll actually want to wear.</p>
-          <div class="fresh-badges">
-            <span>♡ Custom shirts</span>
-            <span>♡ One-of-a-kind designs</span>
-            <span>♡ Made to order</span>
-          </div>
-          <a class="btn primary" href="#contact">Create Yours</a>
-        </div>
-        <div class="fresh-media-stack reveal-scale">
-          <button class="fresh-drop-photo" data-image="tyler-hq" aria-label="Open Tyler and Jesus shirts photo">
-            <img data-tyler-hq loading="eager" alt="Tyler soccer shirt and Jesus is my light shirt">
-            <span class="photo-sticker sticker-top">NEW ✦</span>
-            <span class="photo-sticker sticker-bottom">CUSTOM APPAREL ♡</span>
-          </button>
-          <button class="fresh-mini-polaroid" data-image="assets/gallery/shirts-grace-growth.webp" aria-label="Open custom apparel photo">
-            <img src="assets/gallery/shirts-grace-growth.webp?v=3" alt="Pink custom shirts by Bree Made Creations">
-            <span>MORE APPAREL ♡</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="shop" class="horizontal-shop scroll-section">
-      <div class="shop-sticky">
-        <div class="shop-heading section-heading">
+    <section id="make" class="make-scroll">
+      <div class="make-sticky">
+        <div class="make-head">
           <span class="eyebrow">WHAT I MAKE</span>
-          <h2><span class="title-kicker">pretty + personalized</span>One idea. Endless ways to make it yours.</h2>
-          <p>Scroll to move through the collection.</p>
+          <h2>One idea.<br><em>So many possibilities.</em></h2>
+          <p>Scroll through the collection.</p>
         </div>
-
-        <div class="shop-scroll-count" aria-hidden="true"><span>01</span><b>/ 06</b></div>
-        <div class="shop-giant-word" aria-hidden="true">CUSTOM</div>
-
-        <div class="product-viewport">
-          <div class="product-track">
-            <article class="product-card shop-card">
-              <div class="shop-card-num">01</div><div class="icon">👕</div>
-              <h3>Custom Apparel</h3>
-              <p>Shirts, sweatshirts and more for birthdays, businesses, events, teams and everyday wear.</p>
-              <div class="shop-card-photo"><img data-tyler-hq alt="Custom Bree Made Creations shirts"></div>
-            </article>
-            <article class="product-card shop-card">
-              <div class="shop-card-num">02</div><div class="icon">✨</div>
-              <h3>Stickers</h3>
-              <p>Custom stickers for branding, packaging, events, gifts and personal projects.</p>
-              <div class="shop-card-photo"><img src="assets/gallery/stickers-2toneclassics.webp?v=2" alt="Custom stickers"></div>
-            </article>
-            <article class="product-card shop-card">
-              <div class="shop-card-num">03</div><div class="icon">🚗</div>
-              <h3>Decals</h3>
-              <p>Vinyl decals for cars, windows, cups, businesses and personalized projects.</p>
-              <div class="shop-card-photo"><img src="assets/gallery/decal-eagle-flag.webp?v=2" alt="Custom decal"></div>
-            </article>
-            <article class="product-card shop-card">
-              <div class="shop-card-num">04</div><div class="icon">🎁</div>
-              <h3>Personalized Gifts</h3>
-              <p>Custom gifts created around the person, occasion, theme or aesthetic you have in mind.</p>
-              <div class="shop-card-photo"><img src="assets/gallery/hats-tan-lines.webp?v=2" alt="Custom gift example"></div>
-            </article>
-            <article class="product-card shop-card">
-              <div class="shop-card-num">05</div><div class="icon">💐</div>
-              <h3>Bouquets</h3>
-              <p>Pretty custom bouquet designs for gifts, celebrations and special moments.</p>
-              <div class="shop-card-photo"><img src="assets/gallery/bouquet-pink-fresh.webp?v=2" alt="Custom pink bouquet"></div>
-            </article>
-            <article class="product-card shop-card">
-              <div class="shop-card-num">06</div><div class="icon">💗</div>
-              <h3>And More</h3>
-              <p>Have an idea that isn’t listed? Message Bree and we’ll figure out what’s possible.</p>
-              <div class="shop-card-photo"><img src="assets/gallery/bouquet-tulips.webp?v=2" alt="Custom creation"></div>
-            </article>
+        <div class="make-count"><span>01</span><b>/ 06</b></div>
+        <div class="make-word" aria-hidden="true">CUSTOM</div>
+        <div class="make-window">
+          <div class="make-track">
+            <article class="make-card"><b>01</b><div class="make-icon">👕</div><h3>Custom Apparel</h3><p>Shirts, sweatshirts and more for birthdays, businesses, events, teams and everyday wear.</p><img src="assets/gallery/new-fall-shirts.webp" alt="Custom apparel"></article>
+            <article class="make-card"><b>02</b><div class="make-icon">✨</div><h3>Stickers</h3><p>Custom stickers for branding, packaging, events, gifts and personal projects.</p><img src="assets/gallery/stickers-2toneclassics.webp" alt="Custom stickers"></article>
+            <article class="make-card"><b>03</b><div class="make-icon">🚗</div><h3>Decals</h3><p>Vinyl decals for cars, windows, cups, businesses and personalized projects.</p><img src="assets/gallery/decal-eagle-flag.webp" alt="Custom decal"></article>
+            <article class="make-card"><b>04</b><div class="make-icon">💐</div><h3>Bouquets</h3><p>Pretty custom bouquet designs for gifts, celebrations and special moments.</p><img src="assets/gallery/bouquet-tulips.webp" alt="Tulip bouquet"></article>
+            <article class="make-card"><b>05</b><div class="make-icon">🧢</div><h3>Hats + Gifts</h3><p>Personalized hats and custom gift ideas designed around your theme.</p><img src="assets/gallery/hats-tan-lines.webp" alt="Custom hats"></article>
+            <article class="make-card"><b>06</b><div class="make-icon">💗</div><h3>And More</h3><p>Have an idea that isn’t listed? Message Bree and see what we can create.</p><img src="assets/gallery/bouquet-pink-fresh.webp" alt="Custom bouquet"></article>
           </div>
         </div>
-
-        <div class="shop-scroll-hint" aria-hidden="true">KEEP SCROLLING <span>→</span></div>
       </div>
     </section>
 
-
-    <div class="kinetic-divider" aria-hidden="true">
-      <div class="kinetic-line kinetic-line-a">MADE WITH LOVE ♡ MADE FOR YOU ✦ CUSTOM EVERYTHING ♡</div>
-      <div class="kinetic-line kinetic-line-b">APPAREL ✦ STICKERS ♡ DECALS ✦ BOUQUETS ♡ GIFTS ✦</div>
-    </div>
-
-    <section id="gallery" class="section gallery-showcase scroll-section">
-      <div class="section-heading reveal-up">
+    <section id="gallery" class="gallery-section">
+      <div class="section-head">
         <span class="eyebrow">RECENT CREATIONS</span>
-        <h2><span class="title-kicker">real custom orders</span>A little look at what Bree makes.</h2>
+        <h2>A little look at<br><em>what Bree makes.</em></h2>
         <p>Tap any photo to see it bigger.</p>
       </div>
 
-      <div class="featured-gallery editorial-gallery">
-        <button class="featured-card gallery-xl reveal-up" data-image="assets/gallery/shirts-grace-growth.webp">
-          <img src="assets/gallery/shirts-grace-growth.webp?v=3" alt="Custom Grace and Growth apparel">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Apparel</span></div>
-        </button>
-
-        <button class="featured-card gallery-tall tyler-gallery-card reveal-up" data-image="tyler-hq">
-          <img data-tyler-hq alt="Custom Tyler soccer shirt and Jesus is my light shirt">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Apparel</span></div>
-        </button>
-
-        <button class="featured-card gallery-tall reveal-up" data-image="assets/gallery/lightsaber-day.webp">
-          <img src="assets/gallery/lightsaber-day.webp?v=2" alt="Lightsaber bouquet in daylight">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
-        </button>
-
-        <button class="featured-card gallery-tall reveal-up" data-image="assets/gallery/lightsaber-dark.webp">
-          <img src="assets/gallery/lightsaber-dark.webp?v=2" alt="Lightsaber bouquet glowing in the dark">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
-        </button>
-
-        <button class="featured-card gallery-square reveal-up" data-image="assets/gallery/hats-tan-lines.webp">
-          <img src="assets/gallery/hats-tan-lines.webp?v=2" alt="Custom Good Times and Tan Lines hats">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Hat</span></div>
-        </button>
-
-        <button class="featured-card gallery-square reveal-up" data-image="assets/gallery/stickers-2toneclassics.webp">
-          <img src="assets/gallery/stickers-2toneclassics.webp?v=2" alt="Custom 2toneclassics stickers">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Sticker</span></div>
-        </button>
-
-        <button class="featured-card gallery-wide reveal-up" data-image="assets/gallery/decal-eagle-flag.webp">
-          <img src="assets/gallery/decal-eagle-flag.webp?v=2" alt="Custom eagle flag decal">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Decal</span></div>
-        </button>
-
-        <button class="featured-card gallery-tall reveal-up" data-image="assets/gallery/bouquet-tulips.webp">
-          <img src="assets/gallery/bouquet-tulips.webp?v=2" alt="Custom tulip bouquet">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
-        </button>
-
-        <button class="featured-card gallery-tall reveal-up" data-image="assets/gallery/bouquet-red-black.webp">
-          <img src="assets/gallery/bouquet-red-black.webp?v=2" alt="Custom red and black bouquet">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
-        </button>
-
-        <button class="featured-card gallery-square reveal-up" data-image="assets/gallery/bouquet-pink-fresh.webp">
-          <img src="assets/gallery/bouquet-pink-fresh.webp?v=2" alt="Custom pink bouquet">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Bouquet</span></div>
-        </button>
-
-        <button class="featured-card gallery-square reveal-up" data-image="assets/gallery/stickers-diablo.webp">
-          <img src="assets/gallery/stickers-diablo.webp?v=2" alt="Custom Diablo stickers">
-          <div class="gallery-caption simple-caption"><span class="gallery-tag">Sticker</span></div>
-        </button>
+      <div class="gallery-grid">
+        <button class="gallery-card g1" data-image="assets/gallery/new-fall-shirts.webp"><img src="assets/gallery/new-fall-shirts.webp" alt="Custom Tyler soccer and Jesus is my light shirts"><span>Apparel</span></button>
+        <button class="gallery-card g2" data-image="assets/gallery/lightsaber-day.webp"><img src="assets/gallery/lightsaber-day.webp" alt="Lightsaber bouquet in daylight"><span>Bouquet</span></button>
+        <button class="gallery-card g3" data-image="assets/gallery/lightsaber-dark.webp"><img src="assets/gallery/lightsaber-dark.webp" alt="Glowing lightsaber bouquet"><span>Bouquet</span></button>
+        <button class="gallery-card g4" data-image="assets/gallery/shirts-grace-growth.webp"><img src="assets/gallery/shirts-grace-growth.webp" alt="Grace and Growth custom shirts"><span>Apparel</span></button>
+        <button class="gallery-card g5" data-image="assets/gallery/hats-tan-lines.webp"><img src="assets/gallery/hats-tan-lines.webp" alt="Good Times and Tan Lines hats"><span>Hat</span></button>
+        <button class="gallery-card g6" data-image="assets/gallery/stickers-2toneclassics.webp"><img src="assets/gallery/stickers-2toneclassics.webp" alt="2toneclassics stickers"><span>Sticker</span></button>
+        <button class="gallery-card g7" data-image="assets/gallery/decal-eagle-flag.webp"><img src="assets/gallery/decal-eagle-flag.webp" alt="Eagle flag decal"><span>Decal</span></button>
+        <button class="gallery-card g8" data-image="assets/gallery/bouquet-tulips.webp"><img src="assets/gallery/bouquet-tulips.webp" alt="Tulip bouquet"><span>Bouquet</span></button>
+        <button class="gallery-card g9" data-image="assets/gallery/bouquet-red-black.webp"><img src="assets/gallery/bouquet-red-black.webp" alt="Red and black bouquet"><span>Bouquet</span></button>
+        <button class="gallery-card g10" data-image="assets/gallery/bouquet-pink-fresh.webp"><img src="assets/gallery/bouquet-pink-fresh.webp" alt="Pink bouquet"><span>Bouquet</span></button>
+        <button class="gallery-card g11" data-image="assets/gallery/stickers-diablo.webp"><img src="assets/gallery/stickers-diablo.webp" alt="Diablo stickers"><span>Sticker</span></button>
+        <button class="gallery-card g12" data-image="assets/gallery/pbk-shirts.webp"><img src="assets/gallery/pbk-shirts.webp" alt="Black PBK custom shirts"><span>Apparel</span></button>
+        <button class="gallery-card g13" data-image="assets/gallery/sports-cuts.webp"><img src="assets/gallery/sports-cuts.webp" alt="Sports and Cuts Barber Shop custom signs"><span>Sign</span></button>
+        <button class="gallery-card g14" data-image="assets/gallery/banana-cookie-labels.webp"><img src="assets/gallery/banana-cookie-labels.webp" alt="Banana pudding cookie custom labels"><span>Sticker</span></button>
+        <button class="gallery-card g15" data-image="assets/gallery/wedding-signs.webp"><img src="assets/gallery/wedding-signs.webp" alt="Custom wedding signs"><span>Wedding</span></button>
+        <button class="gallery-card g16" data-image="assets/gallery/lady-lions.webp"><img src="assets/gallery/lady-lions.webp" alt="Lady Lions custom stickers"><span>Sticker</span></button>
+        <button class="gallery-card g17" data-image="assets/gallery/sugar-grid-tote.webp"><img src="assets/gallery/sugar-grid-tote.webp" alt="The Sugar Grid custom tote bag"><span>Tote</span></button>
+        <button class="gallery-card g18" data-image="assets/gallery/maricopa-decals.webp"><img src="assets/gallery/maricopa-decals.webp" alt="Sandlot Maricopa custom decals"><span>Decal</span></button>
+        <button class="gallery-card g19" data-image="assets/gallery/hit-it-hydie.webp"><img src="assets/gallery/hit-it-hydie.webp" alt="Hit It For Hydie custom stickers"><span>Sticker</span></button>
       </div>
 
-      <div class="gallery-cta-row reveal-up">
-        <a class="btn primary" href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">See More on Instagram</a>
-        <a class="btn ghost" href="#contact">Start Your Order</a>
+      <div class="gallery-actions"><a class="btn primary" href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">More on Instagram</a><a class="btn glass" href="#contact">Start Your Order</a></div>
+    </section>
+
+    <section id="order" class="info-section info-order">
+      <div class="info-copy section-head">
+        <span class="eyebrow">HOW TO ORDER</span>
+        <h2>From idea to<br><em>finished piece.</em></h2>
+        <p>Send your idea, size or quantity, colors, deadline, and any reference photos. Bree will confirm the details and price before your order begins.</p>
+        <div class="chips"><span>♡ 50% deposit</span><span>♡ Custom details confirmed first</span><span>♡ Pickup, delivery & shipping</span></div>
+        <a class="btn primary" href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">Send Your Idea</a>
+      </div>
+      <button class="info-image" data-image="assets/how-to-order.webp"><img src="assets/how-to-order.webp" alt="How to place an order with Bree Made Creations"></button>
+    </section>
+
+    <section id="policies" class="policies-section">
+      <div class="section-head centered">
+        <span class="eyebrow">BEFORE YOU ORDER</span>
+        <h2>Clear, simple <em>policies.</em></h2>
+        <p>Tap a policy card to read the full details.</p>
+      </div>
+      <div class="policy-grid">
+        <button class="policy-card" data-image="assets/apparel-policy.webp"><img src="assets/apparel-policy.webp" alt="Apparel policy"><span>Apparel</span></button>
+        <button class="policy-card raised" data-image="assets/general-order-policy.webp"><img src="assets/general-order-policy.webp" alt="General order policy"><span>General Orders</span></button>
+        <button class="policy-card" data-image="assets/stickers-decals-policy.webp"><img src="assets/stickers-decals-policy.webp" alt="Sticker and decal policy"><span>Stickers + Decals</span></button>
       </div>
     </section>
 
-    <section id="process-motion" class="process-story" aria-label="How a custom order comes together">
-      <div class="process-sticky">
-        <div class="process-copy">
-          <span class="eyebrow">FROM IDEA → MADE FOR YOU</span>
-          <h2 class="process-title">Send your<br><em>idea.</em></h2>
-          <p class="process-sub">Your scroll moves the order from inspiration to finished piece.</p>
-          <div class="process-count"><span>01</span><b>/ 04</b></div>
-        </div>
-
-        <div class="process-visual" aria-hidden="true">
-          <div class="process-halo"></div>
-          <div class="process-photo">
-            <img src="assets/how-to-order.webp?v=2" alt="">
-          </div>
-          <span class="process-chip process-chip-1">MESSAGE ♡</span>
-          <span class="process-chip process-chip-2">DETAILS ✦</span>
-          <span class="process-chip process-chip-3">50% DEPOSIT ♡</span>
-          <span class="process-chip process-chip-4">MADE WITH LOVE ✦</span>
-        </div>
-
-        <div class="process-bg-word">YOUR IDEA</div>
+    <section id="payments" class="info-section info-payments">
+      <button class="info-image payment-image" data-image="assets/payment-methods.webp"><img src="assets/payment-methods.webp" alt="Payment methods accepted by Bree Made Creations"></button>
+      <div class="info-copy section-head">
+        <span class="eyebrow">PAYMENTS</span>
+        <h2>Easy ways to<br><em>secure your order.</em></h2>
+        <p>A 50% non-refundable deposit is required to begin custom work. The remaining balance is due according to your order details.</p>
+        <div class="payment-pills"><span>Zelle</span><span>Venmo</span><span>Chime</span><span>Apple Pay</span></div>
       </div>
     </section>
 
-    <section id="order" class="section alt scroll-section">
-      <div class="split-section">
-        <div class="section-heading sticky-copy">
-          <span class="eyebrow">HOW TO ORDER</span>
-          <h2><span class="title-kicker">easy & cute</span>Four easy steps.</h2>
-          <p>Message Bree on Instagram or Facebook, send all of your details, confirm your order and deposit, then sit back while your custom piece is made.</p>
-          <div class="stacked-actions">
-            <a class="btn primary" href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">Instagram</a>
-            <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61591828299475" target="_blank" rel="noopener">Facebook</a>
-          </div>
-        </div>
-        <div class="feature-image scroll-image-panel">
-          <img src="assets/how-to-order.webp?v=2" alt="How to place an order with Bree Made Creations">
-        </div>
-      </div>
-    </section>
-
-    <section id="policies" class="section scroll-section">
-      <div class="section-heading">
-        <span class="eyebrow">POLICIES</span>
-        <h2><span class="title-kicker">before you order</span>Please review before ordering.</h2>
-        <p>Custom work is made specifically for you, so deposits, approvals, turnaround times and sizing details matter.</p>
-      </div>
-
-      <div class="policy-gallery">
-        <button class="image-card" data-image="assets/policies-overview.webp?v=2" aria-label="Open policies overview">
-          <img src="assets/policies-overview.webp?v=2" alt="Bree Made Creations policies overview">
-          <span>General Policies</span>
-        </button>
-        <button class="image-card" data-image="assets/apparel-policy.webp?v=2" aria-label="Open custom apparel policy">
-          <img src="assets/apparel-policy.webp?v=2" alt="Custom apparel policy">
-          <span>Apparel Policy</span>
-        </button>
-        <button class="image-card" data-image="assets/stickers-decals-policy.webp?v=2" aria-label="Open stickers and decals policy">
-          <img src="assets/stickers-decals-policy.webp?v=2" alt="Stickers and decals policy">
-          <span>Stickers & Decals</span>
-        </button>
-        <button class="image-card" data-image="assets/general-order-policy.webp?v=2" aria-label="Open general custom order policy">
-          <img src="assets/general-order-policy.webp?v=2" alt="General custom order policy">
-          <span>Custom Order Policy</span>
-        </button>
-      </div>
-    </section>
-
-    <section id="payments" class="section alt scroll-section">
-      <div class="split-section reverse">
-        <div class="feature-image scroll-image-panel">
-          <img src="assets/payment-methods.webp?v=2" alt="Bree Made Creations payment methods including Zelle, Venmo, Chime and Apple Pay">
-        </div>
-        <div class="section-heading sticky-copy">
-          <span class="eyebrow">PAYMENTS</span>
-          <h2><span class="title-kicker">safe & simple</span>Simple payment options.</h2>
-          <p>A 50% non-refundable deposit is required to begin an order. Payment options include Zelle, Venmo, Chime and Apple Pay.</p>
-          <p class="small-note">Payment details are provided when your order is confirmed.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="love-scroll-break" aria-hidden="true">
-      <div class="love-break-line love-break-one">BREE MADE ✦ BREE MADE ✦ BREE MADE ✦ BREE MADE ✦</div>
-      <div class="love-break-line love-break-two">CUSTOM ♡ PERSONAL ♡ MADE WITH CARE ♡ CUSTOM ♡</div>
-    </section>
-
-    <section class="section support-section scroll-section">
+    <section class="support-section">
       <div class="support-card">
-        <div class="support-visual reveal-scale scroll-image-panel">
-          <img src="assets/thank-you.webp?v=2" alt="Thank you for supporting Bree Made Creations">
-        </div>
-        <div class="support-copy reveal-up">
+        <div class="support-visual"><img src="assets/thank-you.webp" alt="Thank you for supporting Bree Made Creations"></div>
+        <div class="support-copy">
           <span class="eyebrow">SUPPORT SMALL BUSINESS ♡</span>
-          <h2>Custom made. Personal. Made with care.</h2>
-          <p>Every order is created around your idea. Whether it’s a bouquet, shirt, sticker, decal or gift, Bree Made Creations is here to make it feel personal.</p>
-
-          <div class="support-actions">
-            <a class="mini-action" href="#order"><strong>How to Order</strong><span>View steps →</span></a>
-            <a class="mini-action" href="#policies"><strong>Policies</strong><span>Read before ordering →</span></a>
-            <a class="mini-action" href="#payments"><strong>Payments</strong><span>See accepted methods →</span></a>
-          </div>
-
-          <div class="social-row">
-            <a href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">Instagram</a>
-            <span>♡</span>
-            <a href="https://www.facebook.com/profile.php?id=61591828299475" target="_blank" rel="noopener">Facebook</a>
-            <span>♡</span>
-            <a href="https://linktr.ee/BreeMadeCreations" target="_blank" rel="noopener">Linktree</a>
-          </div>
+          <h2>Custom made.<br><em>Personal. Made with care.</em></h2>
+          <p>Every order supports a small business and gets made around the details that matter to you.</p>
+          <div class="support-links"><a href="#order">How to Order →</a><a href="#policies">Policies →</a><a href="#payments">Payments →</a></div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact-section scroll-section">
-      <div class="contact-card">
-        <div>
-          <span class="eyebrow">READY TO CREATE?</span>
-          <h2><span class="title-kicker">ready to order?</span>Send your idea and let’s make it happen. ♡</h2>
-          <p>Include the item, quantity, sizes, colors, deadline and any inspiration photos when you message.</p>
-        </div>
-
-        <div class="contact-buttons">
-          <a class="btn primary" href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">@breemadecreations</a>
-          <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61591828299475" target="_blank" rel="noopener">Facebook</a>
-          <a class="btn ghost" href="https://linktr.ee/BreeMadeCreations" target="_blank" rel="noopener">Linktree</a>
-          <a class="btn ghost" href="tel:+14807148024">(480) 714-8024</a>
-        </div>
-
-        <div class="payment-row">
-          <strong>Accepted:</strong>
-          <span>Zelle</span><span>Venmo</span><span>Chime</span><span>Apple Pay</span>
-        </div>
+    <section id="contact" class="contact-section">
+      <div class="contact-orbit" aria-hidden="true"><span>✦</span><span>♡</span><span>✧</span></div>
+      <span class="eyebrow inverse">READY WHEN YOU ARE</span>
+      <h2>Let’s make something<br><em>you’ll love.</em></h2>
+      <p>Message Bree with your idea and she’ll help you figure out the details.</p>
+      <div class="contact-actions">
+        <a class="btn white" href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn outline-white" href="https://www.facebook.com/profile.php?id=61591828299475" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn outline-white" href="https://linktr.ee/BreeMadeCreations" target="_blank" rel="noopener">Linktree</a>
+        <a class="btn outline-white" href="tel:+14807148024">(480) 714-8024</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div>
-      <strong>Bree Made Creations</strong>
-      <span>Custom creations made with love ♡</span>
-    </div>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61591828299475" target="_blank" rel="noopener">Facebook</a>
-    </div>
-    <p>© <span id="year"></span> Bree Made Creations.</p>
+    <a class="footer-brand" href="#home"><img src="assets/nav-logo.webp" alt=""><span>Bree Made Creations</span></a>
+    <p>Custom Creations Made With Love ♡</p>
+    <div><a href="https://www.instagram.com/breemadecreations/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/profile.php?id=61591828299475" target="_blank" rel="noopener">Facebook</a><a href="https://linktr.ee/BreeMadeCreations" target="_blank" rel="noopener">Linktree</a></div>
+    <small>© <span id="year"></span> Bree Made Creations</small>
   </footer>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -465,6 +244,6 @@
     <img src="" alt="">
   </div>
 
-  <script src="script.js?v=18"></script>
+  <script src="script.js?v=20"></script>
 </body>
 </html>
