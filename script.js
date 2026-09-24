@@ -1,3 +1,27 @@
+
+// Reliable shirt image loader: fetches a text-encoded image so GitHub Pages serves it consistently.
+let tylerHqDataUri = "";
+fetch("assets/gallery/tyler-jesus-hq.b64?v=1", { cache: "force-cache" })
+  .then(r => {
+    if (!r.ok) throw new Error("shirt image data failed to load");
+    return r.text();
+  })
+  .then(b64 => {
+    tylerHqDataUri = "data:image/webp;base64," + b64.trim();
+    document.querySelectorAll("img[data-tyler-hq]").forEach(img => {
+      img.src = tylerHqDataUri;
+      img.classList.add("hq-loaded");
+    });
+    document.querySelectorAll('[data-image="tyler-hq"]').forEach(card => {
+      card.dataset.resolvedImage = tylerHqDataUri;
+    });
+  })
+  .catch(() => {
+    document.querySelectorAll("img[data-tyler-hq]").forEach(img => {
+      img.src = "assets/gallery/shirts-grace-growth.webp?v=3";
+    });
+  });
+
 const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.nav');
 
@@ -26,7 +50,7 @@ document.querySelectorAll('.image-card[data-image], .featured-card[data-image], 
   card.addEventListener('click', () => {
     if (!lightbox || !lightboxImage) return;
     const img = card.querySelector('img');
-    lightboxImage.src = card.dataset.image;
+    lightboxImage.src = card.dataset.resolvedImage || (card.dataset.image === 'tyler-hq' ? tylerHqDataUri : card.dataset.image);
     lightboxImage.alt = img?.alt || '';
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
@@ -253,4 +277,92 @@ if (!reducedMotion) {
   window.addEventListener('scroll', requestUpdate, { passive: true });
   window.addEventListener('resize', requestUpdate, { passive: true });
   requestUpdate();
+}
+
+
+// Extra cinematic scroll layers v17
+if (!reducedMotion) {
+  let extraFrame = false;
+
+  const updateExtraMotion = () => {
+    const vh = window.innerHeight || 800;
+
+    // Pinned horizontal product rail
+    const shop = document.querySelector(".horizontal-shop");
+    const track = document.querySelector(".product-track");
+    const viewport = document.querySelector(".product-viewport");
+    const counter = document.querySelector(".shop-scroll-count span");
+    const giant = document.querySelector(".shop-giant-word");
+
+    if (shop && track && viewport) {
+      const r = shop.getBoundingClientRect();
+      const available = Math.max(1, shop.offsetHeight - vh);
+      const p = clamp(0, -r.top / available, 1);
+      const maxX = Math.max(0, track.scrollWidth - viewport.clientWidth + 120);
+      track.style.transform = "translate3d(" + (-maxX * p).toFixed(1) + "px,0,0)";
+      if (giant) giant.style.transform = "translate3d(" + lerp(80, -520, p).toFixed(1) + "px,0,0)";
+      if (counter) {
+        const step = Math.min(6, Math.max(1, Math.floor(p * 6) + 1));
+        counter.textContent = String(step).padStart(2, "0");
+      }
+
+      document.querySelectorAll(".shop-card").forEach((card, i) => {
+        const local = clamp(0, 1 - Math.abs((i / 5) - p) * 1.75, 1);
+        card.style.setProperty("--shop-card-scale", (0.92 + local * 0.08).toFixed(3));
+        card.style.setProperty("--shop-card-tilt", ((i % 2 ? 1 : -1) * (1 - local) * 2.4).toFixed(2) + "deg");
+        card.style.setProperty("--shop-card-glow", local.toFixed(3));
+      });
+    }
+
+    // Kinetic divider moves in opposite directions
+    document.querySelectorAll(".kinetic-divider").forEach(div => {
+      const r = div.getBoundingClientRect();
+      const p = clamp(-1, (r.top - vh * 0.5) / vh, 1);
+      const a = div.querySelector(".kinetic-line-a");
+      const b = div.querySelector(".kinetic-line-b");
+      if (a) a.style.transform = "translate3d(" + (p * -160).toFixed(1) + "px,0,0)";
+      if (b) b.style.transform = "translate3d(" + (p * 190).toFixed(1) + "px,0,0)";
+    });
+
+    // Scroll-reveal masks for large images
+    document.querySelectorAll(".scroll-image-panel").forEach((panel, i) => {
+      const r = panel.getBoundingClientRect();
+      const centerDistance = Math.abs((r.top + r.height / 2) - vh / 2);
+      const proximity = 1 - clamp(0, centerDistance / (vh * .85), 1);
+      panel.style.setProperty("--panel-reveal", (14 - proximity * 14).toFixed(2) + "%");
+      panel.style.setProperty("--panel-scale", (0.965 + proximity * .035).toFixed(4));
+      panel.style.setProperty("--panel-y", ((1 - proximity) * (i % 2 ? 28 : -28)).toFixed(1) + "px");
+    });
+
+    // Gallery gets a curtain reveal in addition to drift
+    document.querySelectorAll(".editorial-gallery .featured-card").forEach((card, i) => {
+      const r = card.getBoundingClientRect();
+      const centerDistance = Math.abs((r.top + r.height / 2) - vh / 2);
+      const proximity = 1 - clamp(0, centerDistance / (vh * .9), 1);
+      card.style.setProperty("--gallery-clip", (10 - proximity * 10).toFixed(2) + "%");
+      card.style.setProperty("--gallery-shadow", proximity.toFixed(3));
+    });
+
+    // CTA scales up as it enters
+    const contact = document.querySelector(".contact-card");
+    if (contact) {
+      const r = contact.getBoundingClientRect();
+      const p = clamp(0, 1 - Math.abs((r.top + r.height / 2) - vh / 2) / vh, 1);
+      contact.style.setProperty("--cta-scale", (0.94 + p * 0.06).toFixed(3));
+      contact.style.setProperty("--cta-rotate", ((1 - p) * -1.4).toFixed(2) + "deg");
+    }
+
+    extraFrame = false;
+  };
+
+  const requestExtraMotion = () => {
+    if (!extraFrame) {
+      requestAnimationFrame(updateExtraMotion);
+      extraFrame = true;
+    }
+  };
+
+  window.addEventListener("scroll", requestExtraMotion, { passive: true });
+  window.addEventListener("resize", requestExtraMotion, { passive: true });
+  requestExtraMotion();
 }
