@@ -22,7 +22,7 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImage = lightbox?.querySelector('img');
 const closeBtn = lightbox?.querySelector('.lightbox-close');
 
-document.querySelectorAll('.image-card[data-image], .featured-card[data-image], .stacked-photo[data-image], .hero-mini-photo[data-image], .fresh-drop-photo[data-image]').forEach(card => {
+document.querySelectorAll('.image-card[data-image], .featured-card[data-image], .stacked-photo[data-image], .hero-mini-photo[data-image], .fresh-drop-photo[data-image], .fresh-mini-polaroid[data-image]').forEach(card => {
   card.addEventListener('click', () => {
     if (!lightbox || !lightboxImage) return;
     const img = card.querySelector('img');
@@ -127,4 +127,73 @@ if (!reducedMotion) {
   }, { passive: true });
 
   updateBackgroundParallax();
+}
+
+
+// Rich scroll-driven motion: subtle layered depth without making the page dizzy.
+if (!reducedMotion) {
+  let motionFrame = false;
+
+  const clamp = (min, value, max) => Math.max(min, Math.min(max, value));
+
+  const updateScrollMotion = () => {
+    const vh = window.innerHeight || 800;
+    const pageY = window.scrollY || 0;
+
+    // Hero collage pieces drift at different speeds.
+    document.querySelectorAll('.hero-mini-photo').forEach((el, i) => {
+      const speeds = [0.030, -0.020, 0.018, -0.026];
+      const amount = clamp(-18, pageY * speeds[i % speeds.length], 18);
+      el.style.setProperty('--scroll-float', amount + 'px');
+    });
+
+    const logo = document.querySelector('.hero-logo-card');
+    if (logo) {
+      const amount = clamp(-10, pageY * 0.014, 10);
+      logo.style.setProperty('--scroll-float', amount + 'px');
+    }
+
+    // Each section gets a tiny entrance/depth shift tied to viewport position.
+    document.querySelectorAll('.scroll-section').forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const normalized = clamp(-1, (center - vh / 2) / vh, 1);
+      section.style.setProperty('--section-drift', (normalized * -12).toFixed(2) + 'px');
+    });
+
+    // Gallery tiles move at slightly different rates for an editorial collage feel.
+    document.querySelectorAll('.editorial-gallery .featured-card').forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      const normalized = clamp(-1, (rect.top + rect.height / 2 - vh / 2) / vh, 1);
+      const strength = 5 + (i % 4) * 2.2;
+      card.style.setProperty('--card-drift', (normalized * strength).toFixed(2) + 'px');
+    });
+
+    // Featured image gently zooms as it travels through the viewport.
+    document.querySelectorAll('.fresh-drop-photo, .feature-image').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const distance = Math.abs((rect.top + rect.height / 2) - vh / 2);
+      const proximity = 1 - clamp(0, distance / vh, 1);
+      el.style.setProperty('--scroll-scale', (1 + proximity * 0.018).toFixed(4));
+    });
+
+    // Section headings float just a little slower than the page.
+    document.querySelectorAll('.section-heading').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const normalized = clamp(-1, (rect.top - vh * 0.45) / vh, 1);
+      el.style.setProperty('--heading-drift', (normalized * -7).toFixed(2) + 'px');
+    });
+
+    motionFrame = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!motionFrame) {
+      requestAnimationFrame(updateScrollMotion);
+      motionFrame = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', updateScrollMotion, { passive: true });
+  updateScrollMotion();
 }
