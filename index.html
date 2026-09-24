@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="stylesheet" href="styles.css?v=17" />
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -63,8 +63,8 @@
         <div class="hero-logo-card">
           <img src="assets/round-logo.webp?v=2" alt="Bree Made Creations logo with pink roses, bow, butterfly and product icons">
         </div>
-        <button class="hero-mini-photo hero-photo-one" data-image="assets/gallery/tyler-jesus-shirts-hq.jpg" aria-label="View custom shirts">
-          <img src="assets/gallery/tyler-jesus-shirts-hq.jpg?v=1" alt="Custom shirts by Bree Made Creations">
+        <button class="hero-mini-photo hero-photo-one" data-image="tyler-hq" aria-label="View custom shirts">
+          <img data-tyler-hq loading="eager" alt="Custom shirts by Bree Made Creations">
           <span>Custom Apparel</span>
         </button>
         <button class="hero-mini-photo hero-photo-two" data-image="assets/gallery/bouquet-pink-fresh.webp" aria-label="View custom bouquet">
@@ -130,7 +130,7 @@
 
         <div class="motion-stage" aria-hidden="true">
           <div class="motion-card motion-card-1">
-            <img src="assets/gallery/tyler-jesus-shirts-hq.jpg?v=1" alt="">
+            <img data-tyler-hq loading="eager" alt="">
             <span>APPAREL</span>
           </div>
           <div class="motion-card motion-card-2">
@@ -166,8 +166,8 @@
           <a class="btn primary" href="#contact">Create Yours</a>
         </div>
         <div class="fresh-media-stack reveal-scale">
-          <button class="fresh-drop-photo" data-image="assets/gallery/tyler-jesus-shirts-hq.jpg" aria-label="Open Tyler and Jesus shirts photo">
-            <img src="assets/gallery/tyler-jesus-shirts-hq.jpg?v=1" alt="Tyler soccer shirt and Jesus is my light shirt">
+          <button class="fresh-drop-photo" data-image="tyler-hq" aria-label="Open Tyler and Jesus shirts photo">
+            <img data-tyler-hq loading="eager" alt="Tyler soccer shirt and Jesus is my light shirt">
             <span class="photo-sticker sticker-top">NEW ✦</span>
             <span class="photo-sticker sticker-bottom">CUSTOM APPAREL ♡</span>
           </button>
@@ -179,23 +179,67 @@
       </div>
     </section>
 
-    <section id="shop" class="section scroll-section">
-      <div class="section-heading reveal-up">
-        <span class="eyebrow">WHAT I MAKE</span>
-        <h2><span class="title-kicker">pretty + personalized</span>Custom pieces for your people, your business and your moments.</h2>
-        <p>Every order is customized. Send your inspiration, colors, theme, quantity and deadline and we’ll bring the idea together.</p>
-      </div>
+    <section id="shop" class="horizontal-shop scroll-section">
+      <div class="shop-sticky">
+        <div class="shop-heading section-heading">
+          <span class="eyebrow">WHAT I MAKE</span>
+          <h2><span class="title-kicker">pretty + personalized</span>One idea. Endless ways to make it yours.</h2>
+          <p>Scroll to move through the collection.</p>
+        </div>
 
-      <div class="product-grid">
-        <article class="product-card reveal-up"><div class="icon">👕</div><h3>Custom Apparel</h3><p>Shirts, sweatshirts and more for birthdays, businesses, events, teams and everyday wear.</p></article>
-        <article class="product-card reveal-up"><div class="icon">✨</div><h3>Stickers</h3><p>Custom stickers for branding, packaging, events, gifts and personal projects.</p></article>
-        <article class="product-card reveal-up"><div class="icon">🚗</div><h3>Decals</h3><p>Vinyl decals for cars, windows, cups, businesses and personalized projects.</p></article>
-        <article class="product-card reveal-up"><div class="icon">🎁</div><h3>Personalized Gifts</h3><p>Custom gifts created around the person, occasion, theme or aesthetic you have in mind.</p></article>
-        <article class="product-card reveal-up"><div class="icon">💐</div><h3>Bouquets</h3><p>Pretty custom bouquet designs for gifts, celebrations and special moments.</p></article>
-        <article class="product-card reveal-up"><div class="icon">💗</div><h3>And More</h3><p>Have an idea that isn’t listed? Message us with what you want and we’ll let you know what’s possible.</p></article>
+        <div class="shop-scroll-count" aria-hidden="true"><span>01</span><b>/ 06</b></div>
+        <div class="shop-giant-word" aria-hidden="true">CUSTOM</div>
+
+        <div class="product-viewport">
+          <div class="product-track">
+            <article class="product-card shop-card">
+              <div class="shop-card-num">01</div><div class="icon">👕</div>
+              <h3>Custom Apparel</h3>
+              <p>Shirts, sweatshirts and more for birthdays, businesses, events, teams and everyday wear.</p>
+              <div class="shop-card-photo"><img data-tyler-hq alt="Custom Bree Made Creations shirts"></div>
+            </article>
+            <article class="product-card shop-card">
+              <div class="shop-card-num">02</div><div class="icon">✨</div>
+              <h3>Stickers</h3>
+              <p>Custom stickers for branding, packaging, events, gifts and personal projects.</p>
+              <div class="shop-card-photo"><img src="assets/gallery/stickers-2toneclassics.webp?v=2" alt="Custom stickers"></div>
+            </article>
+            <article class="product-card shop-card">
+              <div class="shop-card-num">03</div><div class="icon">🚗</div>
+              <h3>Decals</h3>
+              <p>Vinyl decals for cars, windows, cups, businesses and personalized projects.</p>
+              <div class="shop-card-photo"><img src="assets/gallery/decal-eagle-flag.webp?v=2" alt="Custom decal"></div>
+            </article>
+            <article class="product-card shop-card">
+              <div class="shop-card-num">04</div><div class="icon">🎁</div>
+              <h3>Personalized Gifts</h3>
+              <p>Custom gifts created around the person, occasion, theme or aesthetic you have in mind.</p>
+              <div class="shop-card-photo"><img src="assets/gallery/hats-tan-lines.webp?v=2" alt="Custom gift example"></div>
+            </article>
+            <article class="product-card shop-card">
+              <div class="shop-card-num">05</div><div class="icon">💐</div>
+              <h3>Bouquets</h3>
+              <p>Pretty custom bouquet designs for gifts, celebrations and special moments.</p>
+              <div class="shop-card-photo"><img src="assets/gallery/bouquet-pink-fresh.webp?v=2" alt="Custom pink bouquet"></div>
+            </article>
+            <article class="product-card shop-card">
+              <div class="shop-card-num">06</div><div class="icon">💗</div>
+              <h3>And More</h3>
+              <p>Have an idea that isn’t listed? Message Bree and we’ll figure out what’s possible.</p>
+              <div class="shop-card-photo"><img src="assets/gallery/bouquet-tulips.webp?v=2" alt="Custom creation"></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="shop-scroll-hint" aria-hidden="true">KEEP SCROLLING <span>→</span></div>
       </div>
     </section>
 
+
+    <div class="kinetic-divider" aria-hidden="true">
+      <div class="kinetic-line kinetic-line-a">MADE WITH LOVE ♡ MADE FOR YOU ✦ CUSTOM EVERYTHING ♡</div>
+      <div class="kinetic-line kinetic-line-b">APPAREL ✦ STICKERS ♡ DECALS ✦ BOUQUETS ♡ GIFTS ✦</div>
+    </div>
 
     <section id="gallery" class="section gallery-showcase scroll-section">
       <div class="section-heading reveal-up">
@@ -205,8 +249,8 @@
       </div>
 
       <div class="featured-gallery editorial-gallery">
-        <button class="featured-card gallery-xl reveal-up" data-image="assets/gallery/tyler-jesus-shirts-hq.jpg">
-          <img src="assets/gallery/tyler-jesus-shirts-hq.jpg?v=1" alt="Custom Tyler soccer shirt and Jesus is my light shirt">
+        <button class="featured-card gallery-xl reveal-up" data-image="tyler-hq">
+          <img data-tyler-hq loading="eager" alt="Custom Tyler soccer shirt and Jesus is my light shirt">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Apparel</span></div>
         </button>
 
@@ -278,7 +322,7 @@
             <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61591828299475" target="_blank" rel="noopener">Facebook</a>
           </div>
         </div>
-        <div class="feature-image">
+        <div class="feature-image scroll-image-panel">
           <img src="assets/how-to-order.webp?v=2" alt="How to place an order with Bree Made Creations">
         </div>
       </div>
@@ -313,7 +357,7 @@
 
     <section id="payments" class="section alt scroll-section">
       <div class="split-section reverse">
-        <div class="feature-image">
+        <div class="feature-image scroll-image-panel">
           <img src="assets/payment-methods.webp?v=2" alt="Bree Made Creations payment methods including Zelle, Venmo, Chime and Apple Pay">
         </div>
         <div class="section-heading sticky-copy">
@@ -327,7 +371,7 @@
 
     <section class="section support-section scroll-section">
       <div class="support-card">
-        <div class="support-visual reveal-scale">
+        <div class="support-visual reveal-scale scroll-image-panel">
           <img src="assets/thank-you.webp?v=2" alt="Thank you for supporting Bree Made Creations">
         </div>
         <div class="support-copy reveal-up">
@@ -392,6 +436,6 @@
     <img src="" alt="">
   </div>
 
-  <script src="script.js?v=16"></script>
+  <script src="script.js?v=17"></script>
 </body>
 </html>
