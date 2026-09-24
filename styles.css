@@ -3229,3 +3229,287 @@ img[data-tyler-hq].hq-loaded { opacity: 1; }
   .shop-card { transform: none !important; }
   .kinetic-line, .scroll-image-panel, .contact-card { transform: none !important; clip-path: none !important; }
 }
+
+
+/* =========================================================
+   V18 — image reliability + bigger cinematic scroll moments
+   ========================================================= */
+
+.site-header {
+  transform: scale(var(--header-scale,1));
+  transform-origin: top center;
+  background: rgba(255,255,255,var(--header-alpha,.93));
+}
+
+img[data-tyler-hq] {
+  opacity: 1 !important;
+  background: #f7c4d0;
+  image-rendering: auto;
+}
+
+/* Keep this source around its native display size so it stays crisp. */
+.hero-photo-one {
+  width: 150px !important;
+  height: 200px !important;
+}
+.tyler-gallery-card {
+  grid-column: span 3 !important;
+  grid-row: span 3 !important;
+  max-height: 560px;
+}
+.tyler-gallery-card img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Main story gets a moving spotlight and actual 3D depth. */
+.motion-story {
+  background:
+    radial-gradient(circle at var(--story-glow-x,30%) var(--story-glow-y,30%), rgba(255,255,255,.86), transparent 25rem),
+    radial-gradient(circle at 88% 82%, rgba(255,255,255,.36), transparent 25rem),
+    linear-gradient(145deg,#f5b4c4,#f8ccd7 48%,#ed96ad);
+  transition: background-position .08s linear;
+}
+.motion-card {
+  transform:
+    translate3d(calc(-50% + var(--mx,0px)),calc(-50% + var(--my,0px)),var(--mz,0px))
+    rotateX(var(--card-rx,0deg))
+    rotateY(var(--card-ry,0deg))
+    rotate(var(--mr,0deg))
+    scale(var(--ms,1));
+  filter: brightness(var(--card-bright,1));
+}
+.motion-phase-label {
+  display:inline-flex;
+  margin-top:18px;
+  padding:9px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(130,45,73,.16);
+  color:#8f3151;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.16em;
+  backdrop-filter:blur(10px);
+}
+
+/* SECOND MAJOR SCROLL STORY */
+.process-story {
+  position:relative;
+  height:310vh;
+  max-width:none;
+  background:
+    radial-gradient(circle at 80% 25%,rgba(255,255,255,.74),transparent 26rem),
+    linear-gradient(150deg,#f9d2db 0%,#f2a8ba 54%,#f6c3cf 100%);
+  overflow:clip;
+}
+.process-sticky {
+  position:sticky;
+  top:76px;
+  height:calc(100vh - 76px);
+  min-height:620px;
+  overflow:hidden;
+  isolation:isolate;
+}
+.process-copy {
+  position:absolute;
+  z-index:8;
+  left:clamp(24px,7vw,110px);
+  top:clamp(70px,13vh,135px);
+  width:min(43vw,570px);
+}
+.process-title {
+  font-size:clamp(4rem,8vw,8.2rem);
+  line-height:.84;
+  letter-spacing:-.065em;
+  margin:18px 0 20px;
+  color:#312229;
+}
+.process-title em {
+  color:white;
+  font-weight:600;
+  text-shadow:0 16px 45px rgba(103,32,60,.14);
+}
+.process-sub {
+  max-width:420px;
+  color:rgba(49,34,41,.64);
+  font-weight:600;
+}
+.process-count {
+  margin-top:25px;
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+  color:#943655;
+}
+.process-count span {
+  font-family:"Playfair Display",serif;
+  font-size:2.5rem;
+}
+.process-count b {
+  font-size:.75rem;
+  letter-spacing:.16em;
+}
+.process-visual {
+  position:absolute;
+  z-index:5;
+  left:70%;
+  top:52%;
+  width:min(38vw,520px);
+  transform:
+    translate(-50%,-50%)
+    translateY(var(--process-y,0px))
+    rotate(var(--process-r,0deg))
+    scale(var(--process-s,1));
+  transform-origin:center;
+  will-change:transform;
+}
+.process-halo {
+  position:absolute;
+  inset:-70px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.72),rgba(255,255,255,.12) 58%,transparent 72%);
+  filter:blur(3px);
+}
+.process-photo {
+  position:relative;
+  z-index:2;
+  overflow:hidden;
+  border:10px solid rgba(255,255,255,.94);
+  border-radius:34px;
+  box-shadow:0 40px 90px rgba(91,34,57,.23);
+}
+.process-photo img {
+  display:block;
+  width:100%;
+  height:auto;
+}
+.process-chip {
+  position:absolute;
+  z-index:4;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(211,94,134,.2);
+  color:#9d385c;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.1em;
+  opacity:var(--chip-o,.3);
+  transform:scale(var(--chip-s,.9));
+  box-shadow:0 16px 34px rgba(91,34,57,.14);
+  transition:box-shadow .12s linear,background .12s linear;
+}
+.process-chip.active {
+  background:#fff;
+  box-shadow:0 18px 44px rgba(91,34,57,.24);
+}
+.process-chip-1{left:-70px;top:12%}
+.process-chip-2{right:-52px;top:28%}
+.process-chip-3{left:-85px;bottom:24%}
+.process-chip-4{right:-72px;bottom:9%}
+.process-bg-word {
+  position:absolute;
+  z-index:0;
+  left:-3vw;
+  bottom:-7vw;
+  white-space:nowrap;
+  font-size:clamp(12rem,25vw,30rem);
+  line-height:.72;
+  font-weight:900;
+  letter-spacing:-.09em;
+  color:rgba(255,255,255,.19);
+  transform:translate3d(var(--process-x,0px),0,0);
+  will-change:transform;
+}
+
+/* Gallery cards now slide sideways as well as vertically. */
+.editorial-gallery .featured-card {
+  transform:
+    translate3d(var(--gallery-x,0px),var(--gallery-y,0px),0)
+    rotate(var(--gallery-r,0deg))
+    scale(var(--gallery-s,1));
+}
+
+/* Huge moving typography before the ending sections. */
+.love-scroll-break {
+  overflow:hidden;
+  padding:48px 0;
+  background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.52));
+  border-top:1px solid rgba(184,63,102,.12);
+  border-bottom:1px solid rgba(184,63,102,.12);
+}
+.love-break-line {
+  width:max-content;
+  white-space:nowrap;
+  font-weight:900;
+  line-height:.88;
+  letter-spacing:-.06em;
+  will-change:transform;
+}
+.love-break-one {
+  margin-left:-12vw;
+  font-size:clamp(4rem,9vw,10rem);
+  color:#87314f;
+}
+.love-break-two {
+  margin-top:8px;
+  margin-left:-28vw;
+  font-size:clamp(3.2rem,7vw,8rem);
+  color:rgba(255,255,255,.96);
+  text-shadow:0 15px 42px rgba(91,34,57,.10);
+}
+
+/* More tactile card motion while keeping scroll smooth. */
+.quick-link-card:hover,
+.product-card:hover,
+.featured-card:hover,
+.image-card:hover {
+  transform:translateY(-7px) scale(1.012);
+}
+
+/* A stronger final landing frame. */
+.contact-card {
+  box-shadow:
+    0 38px 100px rgba(91,34,57,.18),
+    inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+@media(max-width:760px){
+  .process-story{height:265vh}
+  .process-sticky{top:72px;height:calc(100vh - 72px)}
+  .process-copy{
+    left:18px;
+    right:18px;
+    top:42px;
+    width:auto;
+  }
+  .process-title{
+    font-size:clamp(3.2rem,15vw,5.2rem);
+  }
+  .process-sub{max-width:290px;font-size:.88rem}
+  .process-visual{
+    left:50%;
+    top:70%;
+    width:min(66vw,330px);
+  }
+  .process-chip{font-size:.58rem;padding:7px 9px}
+  .process-chip-1{left:-35px}
+  .process-chip-2{right:-30px}
+  .process-chip-3{left:-40px}
+  .process-chip-4{right:-34px}
+  .process-bg-word{font-size:37vw;bottom:4vh}
+  .tyler-gallery-card{
+    grid-column:span 1 !important;
+    grid-row:span 1 !important;
+    max-height:none;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .process-story{height:auto;padding:80px 0}
+  .process-sticky{position:relative;top:0;height:auto;min-height:760px}
+  .process-visual,.process-bg-word,.love-break-line{
+    transform:none !important;
+  }
+}
