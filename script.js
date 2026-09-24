@@ -45,8 +45,7 @@ closeBtn?.addEventListener('click', closeLightbox);
 lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-// Scroll reveals
-const revealItems = document.querySelectorAll('.reveal-up, .reveal-scale');
+const reveals = document.querySelectorAll('.reveal-up, .reveal-scale');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -55,145 +54,203 @@ if ('IntersectionObserver' in window) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.13, rootMargin: '0px 0px -6% 0px' });
-
-  revealItems.forEach(el => observer.observe(el));
+  }, { threshold: .10, rootMargin: '0px 0px -5% 0px' });
+  reveals.forEach(el => observer.observe(el));
 } else {
-  revealItems.forEach(el => el.classList.add('is-visible'));
+  reveals.forEach(el => el.classList.add('is-visible'));
 }
 
-// Subtle scroll-linked movement, not overdone.
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (min, value, max) => Math.max(min, Math.min(max, value));
+const lerp = (a, b, t) => a + (b - a) * t;
+
 if (!reducedMotion) {
-  let ticking = false;
+  let rafPending = false;
 
-  const animateOnScroll = () => {
-    const vh = window.innerHeight;
+  const progressBar = document.querySelector('.scroll-progress span');
+  const heroCopy = document.querySelector('.hero-copy');
+  const heroVisual = document.querySelector('.hero-visual-collage');
+  const marquee = document.querySelector('.love-marquee-track');
+  const story = document.querySelector('#scroll-showcase');
+  const storyCopy = document.querySelector('.motion-copy');
+  const storyStep = document.querySelector('.motion-step span');
+  const giantWord = document.querySelector('.motion-giant-word');
+  const motionCards = [...document.querySelectorAll('.motion-card')];
+  const bannerImage = document.querySelector('.banner-section img');
+  const freshCard = document.querySelector('.fresh-drop-card');
+  const freshImage = document.querySelector('.fresh-drop-photo');
+  const freshMini = document.querySelector('.fresh-mini-polaroid');
+  const doodles = [...document.querySelectorAll('.background-doodles span')];
 
-    document.querySelectorAll('.banner-section img, .feature-image img, .hero-logo-card').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const delta = (center - vh / 2) / vh;
-      const shift = Math.max(-10, Math.min(10, delta * -14));
-      el.style.transform = `translateY(${shift}px)`;
-    });
-
-    document.querySelectorAll('.scroll-section').forEach(section => {
-      const rect = section.getBoundingClientRect();
-      const progress = Math.max(-1, Math.min(1, (rect.top - vh / 2) / vh));
-      section.style.setProperty('--orb-shift', `${progress * -22}px`);
-    });
-
-    ticking = false;
+  const setCard = (card, x, y, r, s, z, opacity = 1, clip = 0) => {
+    if (!card) return;
+    card.style.setProperty('--mx', x.toFixed(1) + 'px');
+    card.style.setProperty('--my', y.toFixed(1) + 'px');
+    card.style.setProperty('--mr', r.toFixed(2) + 'deg');
+    card.style.setProperty('--ms', s.toFixed(3));
+    card.style.setProperty('--mz', z.toFixed(1) + 'px');
+    card.style.setProperty('--mo', opacity.toFixed(3));
+    card.style.setProperty('--clip', clip.toFixed(1) + '%');
   };
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(animateOnScroll);
-      ticking = true;
-    }
-  }, { passive: true });
-
-  animateOnScroll();
-}
-
-
-// Slow layered background parallax: decorations move slower than page content.
-if (!reducedMotion) {
-  let bgTicking = false;
-
-  const updateBackgroundParallax = () => {
-    const y = window.scrollY || window.pageYOffset;
-
-    document.body.style.setProperty('--bg1', `${y * -0.035}px`);
-    document.body.style.setProperty('--bg2', `${y * -0.055}px`);
-    document.body.style.setProperty('--bg3', `${y * -0.025}px`);
-    document.body.style.setProperty('--bg4', `${y * -0.045}px`);
-
-    const doodles = document.querySelectorAll('.background-doodles span');
-    const speeds = [0.045, 0.025, 0.06, 0.035, 0.02];
-    doodles.forEach((el, i) => {
-      el.style.transform = `translate3d(0, ${y * speeds[i]}px, 0)`;
-    });
-
-    bgTicking = false;
-  };
-
-  window.addEventListener('scroll', () => {
-    if (!bgTicking) {
-      requestAnimationFrame(updateBackgroundParallax);
-      bgTicking = true;
-    }
-  }, { passive: true });
-
-  updateBackgroundParallax();
-}
-
-
-// Rich scroll-driven motion: subtle layered depth without making the page dizzy.
-if (!reducedMotion) {
-  let motionFrame = false;
-
-  const clamp = (min, value, max) => Math.max(min, Math.min(max, value));
-
-  const updateScrollMotion = () => {
+  const update = () => {
+    const y = window.scrollY || 0;
     const vh = window.innerHeight || 800;
-    const pageY = window.scrollY || 0;
+    const pageMax = Math.max(1, document.documentElement.scrollHeight - vh);
+    const pageP = clamp(0, y / pageMax, 1);
 
-    // Hero collage pieces drift at different speeds.
-    document.querySelectorAll('.hero-mini-photo').forEach((el, i) => {
-      const speeds = [0.030, -0.020, 0.018, -0.026];
-      const amount = clamp(-18, pageY * speeds[i % speeds.length], 18);
-      el.style.setProperty('--scroll-float', amount + 'px');
-    });
+    if (progressBar) progressBar.style.transform = 'scaleX(' + pageP + ')';
 
-    const logo = document.querySelector('.hero-logo-card');
-    if (logo) {
-      const amount = clamp(-10, pageY * 0.014, 10);
-      logo.style.setProperty('--scroll-float', amount + 'px');
+    // Header marquee is tied to scroll instead of an independent loop.
+    if (marquee) {
+      const marqueeX = -((y * .28) % 760);
+      marquee.style.transform = 'translate3d(' + marqueeX.toFixed(1) + 'px,0,0)';
     }
 
-    // Each section gets a tiny entrance/depth shift tied to viewport position.
-    document.querySelectorAll('.scroll-section').forEach(section => {
-      const rect = section.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const normalized = clamp(-1, (center - vh / 2) / vh, 1);
-      section.style.setProperty('--section-drift', (normalized * -12).toFixed(2) + 'px');
+    // Hero moves apart as the user leaves it.
+    const heroP = clamp(0, y / (vh * .78), 1);
+    if (heroCopy) {
+      heroCopy.style.setProperty('--hero-copy-y', lerp(0, -72, heroP).toFixed(1) + 'px');
+      heroCopy.style.setProperty('--hero-copy-opacity', lerp(1, .52, heroP).toFixed(3));
+    }
+    if (heroVisual) {
+      heroVisual.style.setProperty('--hero-visual-y', lerp(0, 74, heroP).toFixed(1) + 'px');
+      heroVisual.style.setProperty('--hero-visual-scale', lerp(1, .91, heroP).toFixed(3));
+    }
+
+    // Background decorations lag behind the page.
+    const bgSpeeds = [.018, .031, .013, .026, .021];
+    doodles.forEach((el, i) => {
+      el.style.transform = 'translate3d(0,' + (y * bgSpeeds[i]).toFixed(1) + 'px,0)';
     });
 
-    // Gallery tiles move at slightly different rates for an editorial collage feel.
+    // Banner opens like a panel as it enters view.
+    if (bannerImage) {
+      const r = bannerImage.getBoundingClientRect();
+      const p = clamp(0, 1 - Math.abs((r.top + r.height / 2) - vh / 2) / (vh * .82), 1);
+      bannerImage.style.setProperty('--banner-scale', lerp(.93, 1, p).toFixed(3));
+      bannerImage.style.setProperty('--banner-y', lerp(34, 0, p).toFixed(1) + 'px');
+      bannerImage.style.setProperty('--banner-tilt', lerp(3.5, 0, p).toFixed(2) + 'deg');
+      bannerImage.style.setProperty('--banner-clip', lerp(7, 0, p).toFixed(2) + '%');
+    }
+
+    // MAIN FEATURE: sticky scroll-story.
+    if (story) {
+      const rect = story.getBoundingClientRect();
+      const available = Math.max(1, story.offsetHeight - vh);
+      const p = clamp(0, -rect.top / available, 1);
+      const eased = p * p * (3 - 2 * p);
+
+      if (storyCopy) {
+        storyCopy.style.setProperty('--story-copy-y', lerp(26, -34, eased).toFixed(1) + 'px');
+        storyCopy.style.setProperty('--story-copy-opacity', lerp(.9, 1, Math.min(1, p * 2)).toFixed(3));
+      }
+      if (giantWord) {
+        giantWord.style.setProperty('--giant-x', lerp(80, -420, eased).toFixed(1) + 'px');
+      }
+      if (storyStep) {
+        const step = Math.min(4, Math.max(1, Math.floor(p * 4) + 1));
+        storyStep.textContent = String(step).padStart(2, '0');
+      }
+
+      // Start as a deck, then explode into an editorial composition.
+      setCard(motionCards[0],
+        lerp(0, -210, eased),
+        lerp(0, -92, eased),
+        lerp(0, -10, eased),
+        lerp(1.04, .94, eased),
+        lerp(90, 0, eased),
+        1,
+        lerp(5, 0, eased)
+      );
+
+      setCard(motionCards[1],
+        lerp(14, 195, eased),
+        lerp(12, -118, eased),
+        lerp(2, 11, eased),
+        lerp(.99, .88, eased),
+        lerp(54, -20, eased),
+        lerp(.92, 1, eased),
+        lerp(8, 0, eased)
+      );
+
+      setCard(motionCards[2],
+        lerp(-8, -142, eased),
+        lerp(18, 188, eased),
+        lerp(-2, -8, eased),
+        lerp(.96, .83, eased),
+        lerp(30, -36, eased),
+        lerp(.82, 1, eased),
+        lerp(11, 0, eased)
+      );
+
+      setCard(motionCards[3],
+        lerp(20, 205, eased),
+        lerp(24, 176, eased),
+        lerp(3, 9, eased),
+        lerp(.93, .80, eased),
+        lerp(8, -52, eased),
+        lerp(.70, 1, eased),
+        lerp(14, 0, eased)
+      );
+    }
+
+    // Featured apparel spread drifts in opposite directions.
+    if (freshCard) {
+      const r = freshCard.getBoundingClientRect();
+      const n = clamp(-1, (r.top + r.height / 2 - vh / 2) / vh, 1);
+      freshCard.style.setProperty('--fresh-y', (n * -22).toFixed(1) + 'px');
+      freshCard.style.setProperty('--fresh-r', (n * -.5).toFixed(2) + 'deg');
+    }
+    if (freshImage) {
+      const r = freshImage.getBoundingClientRect();
+      const n = clamp(-1, (r.top + r.height / 2 - vh / 2) / vh, 1);
+      freshImage.style.setProperty('--fresh-img-y', (n * 24).toFixed(1) + 'px');
+      freshImage.style.setProperty('--fresh-img-scale', (1 + (1 - Math.abs(n)) * .028).toFixed(3));
+    }
+    if (freshMini) {
+      const r = freshMini.getBoundingClientRect();
+      const n = clamp(-1, (r.top + r.height / 2 - vh / 2) / vh, 1);
+      freshMini.style.setProperty('--mini-y', (n * -34).toFixed(1) + 'px');
+    }
+
+    // Gallery becomes a layered scroll collage.
     document.querySelectorAll('.editorial-gallery .featured-card').forEach((card, i) => {
-      const rect = card.getBoundingClientRect();
-      const normalized = clamp(-1, (rect.top + rect.height / 2 - vh / 2) / vh, 1);
-      const strength = 5 + (i % 4) * 2.2;
-      card.style.setProperty('--card-drift', (normalized * strength).toFixed(2) + 'px');
+      const r = card.getBoundingClientRect();
+      const n = clamp(-1, (r.top + r.height / 2 - vh / 2) / vh, 1);
+      const strength = 13 + (i % 5) * 5;
+      card.style.setProperty('--gallery-y', (n * strength).toFixed(1) + 'px');
+      card.style.setProperty('--gallery-r', (n * ((i % 2 ? 1 : -1) * .55)).toFixed(2) + 'deg');
+      card.style.setProperty('--gallery-s', (1 + (1 - Math.abs(n)) * .012).toFixed(3));
+      card.style.setProperty('--gallery-o', lerp(.84, 1, 1 - Math.abs(n) * .6).toFixed(3));
     });
 
-    // Featured image gently zooms as it travels through the viewport.
-    document.querySelectorAll('.fresh-drop-photo, .feature-image').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const distance = Math.abs((rect.top + rect.height / 2) - vh / 2);
-      const proximity = 1 - clamp(0, distance / vh, 1);
-      el.style.setProperty('--scroll-scale', (1 + proximity * 0.018).toFixed(4));
-    });
-
-    // Section headings float just a little slower than the page.
+    // Headings and cards get smaller slow-parallax so the entire site feels alive.
     document.querySelectorAll('.section-heading').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const normalized = clamp(-1, (rect.top - vh * 0.45) / vh, 1);
-      el.style.setProperty('--heading-drift', (normalized * -7).toFixed(2) + 'px');
+      const r = el.getBoundingClientRect();
+      const n = clamp(-1, (r.top - vh * .42) / vh, 1);
+      el.style.setProperty('--heading-y', (n * -13).toFixed(1) + 'px');
     });
 
-    motionFrame = false;
+    document.querySelectorAll('.product-card, .quick-link-card, .image-card, .mini-action, .support-card, .contact-card').forEach((el, i) => {
+      const r = el.getBoundingClientRect();
+      const n = clamp(-1, (r.top + r.height / 2 - vh / 2) / vh, 1);
+      const strength = 5 + (i % 3) * 3;
+      el.style.setProperty('--drift-y', (n * strength).toFixed(1) + 'px');
+      el.style.setProperty('--drift-r', (n * ((i % 2 ? 1 : -1) * .12)).toFixed(2) + 'deg');
+    });
+
+    rafPending = false;
   };
 
-  window.addEventListener('scroll', () => {
-    if (!motionFrame) {
-      requestAnimationFrame(updateScrollMotion);
-      motionFrame = true;
+  const requestUpdate = () => {
+    if (!rafPending) {
+      requestAnimationFrame(update);
+      rafPending = true;
     }
-  }, { passive: true });
+  };
 
-  window.addEventListener('resize', updateScrollMotion, { passive: true });
-  updateScrollMotion();
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate, { passive: true });
+  requestUpdate();
 }

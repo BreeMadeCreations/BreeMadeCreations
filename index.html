@@ -9,9 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=16" />
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
   <div class="background-doodles" aria-hidden="true">
     <span class="d1">✦</span>
     <span class="d2">♡</span>
@@ -62,8 +63,8 @@
         <div class="hero-logo-card">
           <img src="assets/round-logo.webp?v=2" alt="Bree Made Creations logo with pink roses, bow, butterfly and product icons">
         </div>
-        <button class="hero-mini-photo hero-photo-one" data-image="assets/gallery/tyler-jesus-shirts-v2.jpg" aria-label="View custom shirts">
-          <img src="assets/gallery/tyler-jesus-shirts-v2.jpg?v=1" alt="Custom shirts by Bree Made Creations">
+        <button class="hero-mini-photo hero-photo-one" data-image="assets/gallery/tyler-jesus-shirts-hq.jpg" aria-label="View custom shirts">
+          <img src="assets/gallery/tyler-jesus-shirts-hq.jpg?v=1" alt="Custom shirts by Bree Made Creations">
           <span>Custom Apparel</span>
         </button>
         <button class="hero-mini-photo hero-photo-two" data-image="assets/gallery/bouquet-pink-fresh.webp" aria-label="View custom bouquet">
@@ -117,6 +118,40 @@
     </section>
 
 
+
+    <section id="scroll-showcase" class="motion-story" aria-label="Scroll through Bree Made Creations">
+      <div class="motion-sticky">
+        <div class="motion-copy">
+          <span class="motion-kicker">BREE MADE CREATIONS ✦</span>
+          <h2 class="motion-title">Made to<br><em>feel like you.</em></h2>
+          <p class="motion-sub">Keep scrolling — the collection opens up as you move.</p>
+          <div class="motion-step"><span>01</span><b>/ 04</b></div>
+        </div>
+
+        <div class="motion-stage" aria-hidden="true">
+          <div class="motion-card motion-card-1">
+            <img src="assets/gallery/tyler-jesus-shirts-hq.jpg?v=1" alt="">
+            <span>APPAREL</span>
+          </div>
+          <div class="motion-card motion-card-2">
+            <img src="assets/gallery/bouquet-pink-fresh.webp?v=2" alt="">
+            <span>BOUQUETS</span>
+          </div>
+          <div class="motion-card motion-card-3">
+            <img src="assets/gallery/stickers-2toneclassics.webp?v=2" alt="">
+            <span>STICKERS</span>
+          </div>
+          <div class="motion-card motion-card-4">
+            <img src="assets/gallery/hats-tan-lines.webp?v=2" alt="">
+            <span>HATS</span>
+          </div>
+        </div>
+
+        <div class="motion-giant-word">CREATE</div>
+        <div class="motion-scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
+      </div>
+    </section>
+
     <section class="section fresh-drop scroll-section" aria-label="Featured recent custom shirts">
       <div class="fresh-drop-card reveal-up">
         <div class="fresh-drop-copy">
@@ -131,14 +166,14 @@
           <a class="btn primary" href="#contact">Create Yours</a>
         </div>
         <div class="fresh-media-stack reveal-scale">
-          <button class="fresh-drop-photo" data-image="assets/gallery/shirts-grace-growth.webp" aria-label="Open custom apparel photo">
-            <img src="assets/gallery/shirts-grace-growth.webp?v=3" alt="Pink custom shirts by Bree Made Creations">
-            <span class="photo-sticker sticker-top">CUSTOM ✦</span>
-            <span class="photo-sticker sticker-bottom">APPAREL ♡</span>
+          <button class="fresh-drop-photo" data-image="assets/gallery/tyler-jesus-shirts-hq.jpg" aria-label="Open Tyler and Jesus shirts photo">
+            <img src="assets/gallery/tyler-jesus-shirts-hq.jpg?v=1" alt="Tyler soccer shirt and Jesus is my light shirt">
+            <span class="photo-sticker sticker-top">NEW ✦</span>
+            <span class="photo-sticker sticker-bottom">CUSTOM APPAREL ♡</span>
           </button>
-          <button class="fresh-mini-polaroid" data-image="assets/gallery/tyler-jesus-shirts-v2.jpg" aria-label="Open Tyler and Jesus shirts photo">
-            <img src="assets/gallery/tyler-jesus-shirts-v2.jpg?v=2" alt="Tyler soccer shirt and Jesus is my light shirt">
-            <span>NEW DROP ♡</span>
+          <button class="fresh-mini-polaroid" data-image="assets/gallery/shirts-grace-growth.webp" aria-label="Open custom apparel photo">
+            <img src="assets/gallery/shirts-grace-growth.webp?v=3" alt="Pink custom shirts by Bree Made Creations">
+            <span>MORE APPAREL ♡</span>
           </button>
         </div>
       </div>
@@ -170,13 +205,13 @@
       </div>
 
       <div class="featured-gallery editorial-gallery">
-        <button class="featured-card gallery-xl reveal-up" data-image="assets/gallery/shirts-grace-growth.webp">
-          <img src="assets/gallery/shirts-grace-growth.webp?v=3" alt="Custom Grace and Growth apparel">
+        <button class="featured-card gallery-xl reveal-up" data-image="assets/gallery/tyler-jesus-shirts-hq.jpg">
+          <img src="assets/gallery/tyler-jesus-shirts-hq.jpg?v=1" alt="Custom Tyler soccer shirt and Jesus is my light shirt">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Apparel</span></div>
         </button>
 
-        <button class="featured-card gallery-square new-shirts-small reveal-up" data-image="assets/gallery/tyler-jesus-shirts-v2.jpg">
-          <img src="assets/gallery/tyler-jesus-shirts-v2.jpg?v=2" alt="Custom Tyler soccer shirt and Jesus is my light shirt">
+        <button class="featured-card gallery-wide reveal-up" data-image="assets/gallery/shirts-grace-growth.webp">
+          <img src="assets/gallery/shirts-grace-growth.webp?v=3" alt="Custom Grace and Growth apparel">
           <div class="gallery-caption simple-caption"><span class="gallery-tag">Apparel</span></div>
         </button>
 
@@ -357,6 +392,6 @@
     <img src="" alt="">
   </div>
 
-  <script src="script.js?v=15"></script>
+  <script src="script.js?v=16"></script>
 </body>
 </html>
